@@ -1,0 +1,152 @@
+body {
+	background-color : #001E4E;
+	font-family:Segoe UI;
+}
+img, a {
+	outline:none;
+	border:none;
+}
+#login {
+	z-index : 1000;
+}
+
+#login,
+#main {
+	background-color : #001E4E;
+}
+
+#login_box {
+	width : 600px;
+	position : absolute;
+	top : 15%;
+	left : 50%;
+	margin-left : -300px;
+}
+#login_box > img {
+	display : block;
+	width : 200px;
+	height : 200px;
+	float : left;
+}
+#login_box form {
+	margin-left : 230px;
+	position : relative;
+}
+#login_box form p {
+	font-size : 30px;
+	color : #fff;
+	line-height : 1.2;
+}
+#login_box form p span {
+	font-size : 15px;
+}
+
+#login_box fieldset {
+	margin-top : 30px;
+	border : none;
+	width : 344px;
+	height : 30px;
+	padding : 2px;
+	background: #fff;
+}
+
+#login_box input#passwd {
+	font-family:Segoe UI;
+	display : block;
+	width : 280px;
+	height : 30px;
+	border : none;
+	float : left;
+	padding : 0 2px;
+	font-size: 16px;
+}
+input#passwd:focus {
+	border : none;
+}
+
+#login_box fieldset img {
+	float : right;
+	width : 28px;
+	height : 28px;
+	display : inline;
+	margin-top : 1px;
+}
+
+#login_box.correct {
+	-webkit-transition : all 0.5s ease-out;
+	left : 80%;
+	opacity : 0;
+}
+
+#login_box .toggle {
+	-webkit-transition : opacity 0.2s linear;
+}
+#login_box #welcome,
+#incorrect {
+	position : absolute;
+	height : 100px;
+	top : 80px;
+	width : 340px;
+	left : 0px;
+	display : none;
+}
+#welcome {
+	color : #ffffff;
+	font-size : 30px;
+	margin-left : 30px;
+}
+#incorrect {
+	color : #f68323;
+}
+#back_btn {
+	display : block;
+	width : 90px;
+	height : 32px;
+	background : url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAAAgCAYAAACSEW+lAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNXG14zYAAAIQSURBVGiB7Zo9SOtQFMf/FQcz3ixiKiopPt9sq4PgFrAoiHTo4itChy4P3lAf1KWTi2+om0sHQdTFQURQFDIr9MO5KmYobbq1Y99Wh0eFmNQvXk8uen5TOOceOPxyc5ObJNDpdDpg+s6A3w18FQa7B983//jZx6elks0A4BlNBosmgkUTwaKJYNFEsGgiWDQRLJqIwdeH0JOOGkjNhB2xfLGM7QvTEbv+/QtX1RrWj44d8fOfKeiqwMaliZNCue/9vgXpRB8kE4gENSzvHeKuWnuKV7IZGCEdizv5V+t1VUi305Vq6UhHDU/JwL9XBLoqkI4aPeu7J0k2yYBkoo2QjlLddknuUqrbMEK6Zy4Xjz2dJBmRSrRQhnBjN3rmb+wGdFW44rl4DEtTk55XgixItUYLRXl3zdzYKISiwGq2pJUMSDajW+32u2uEomB57xC6KnCQTPShq/+DZKL/Ylob6Zmf1kZgNVuO2NntPe6qNWxcmogENeTisX63+SGkEm0+WIgENXwbG/XMR4IazAfLM3dSKCNfLGNpavLFJxO/kEr09oWJUt3G6dqqS3Ylm4HVbLk2Lc/rz27vkZoJY2U23HOcH0h1MwSAH7v7SEcNnK6tOuJeO0Mv1o+OMZxMYGvBwPzEuGvX6BeB7ldwGR/yPwP8zZAYFk0EiyaCRRPBoolg0USwaCIC/DcpDTyjiXgEfr2cM/8g2B4AAAAASUVORK5CYII=) top left no-repeat;
+	margin-top : 15px;
+}
+
+#account_name {
+	position : absolute;
+	top : 50px;
+	right : 180px;
+	color : #fff;
+	font-size : 25px;
+	padding : 10px;
+	opacity : 0;
+}
+#account_name.active {
+	-webkit-transition : opacity 0.5s ease-in, right 0.5s ease-out, -webkit-transform 0.2s ease-in;
+	opacity : 1;
+	right : 50px;
+}
+
+#account_name:hover {
+	background-color : #2d6376
+}
+#account_name img {
+	vertical-align : middle; 
+}
+#account_name[data-pressed] {
+	-webkit-transform : scale(0.95, 0.95);
+}
+#showpwd {
+	display:inline;
+	vertical-align:middle;
+	margin-right:4px;
+}
+#showpwd:hover {
+	background-color:rgb(223, 223, 223);
+}
+#showpwd:active {
+	background-color:#000000;
+}
+#go {
+	background-color:#001E4E;
+}
+#go:hover {
+	opacity:0.9;
+}
+#go:active {
+	background-color:#FFF;
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<title>Weather</title>
+<link rel="stylesheet" href="common.css"/>
+<link rel="shortcut icon" href="favicons/weather.ico"/>
+<script>
+function charms(){
+	document.getElementById('charmsbar').style.display='block';
+	document.getElementById('datetime').style.display='block';
+}
+function destroycharms() {
+	document.getElementById('charmsbar').style.display='none';
+	document.getElementById('datetime').style.display='none';
+}
+function start(){
+	document.getElementById('startbutton').style.display='block';
+}
+function destroystart() {
+	document.getElementById('startbutton').style.display='none';
+}
+</script>
+<script>
+function splash() {
+setTimeout(function() {document.getElementById('splashscreen').style.animation='splash 1s';},1000);
+setTimeout(function() {document.getElementById('splashscreen').style.oAnimation='splash 1s';},1000);
+setTimeout(function() {document.getElementById('splashscreen').style.webkitAnimation='splash 1s';},1000);
+setTimeout(function() {document.getElementById('splashscreen').style.msAnimation='splash 1s';},1000);
+setTimeout(function() {document.getElementById('splashscreen').style.display='none';},2000);
+}
+</script>
+<style>
+#splashscreen {
+	background-image:url(splashscreens/weather.png);
+	background-color:#2776EC;
+	background-position:center;
+	background-repeat:no-repeat;
+}
+</style>
+</head>
+<body onload="splash()">
+<div id="splashscreen">
+</div>
+<iframe src="http://link6155.kodingen.com/mWeather" width="100%" height="100%"></iframe>
+<div id="hoverarea" onmouseover="charms()" class="hotcorner">
+</div>
+<div id="charmsbar" onmouseover="charms()" onmouseout="destroycharms()">
+<img src="img/charmsbar/search.png" onmouseover="this.src='img/charmsbar/search-hover.png'" onmouseout="this.src='img/charmsbar/search.png'"/><br/>
+<img src="img/charmsbar/share.png" onmouseover="this.src='img/charmsbar/share-hover.png'" onmouseout="this.src='img/charmsbar/share.png'"/><br/>
+<a href="../start/index.html"><img src="img/charmsbar/start.png" onmouseover="this.src='img/charmsbar/start-hover.png'" onmouseout="this.src='img/charmsbar/start.png'"/></a><br/>
+<img src="img/charmsbar/devices.png" onmouseover="this.src='img/charmsbar/devices-hover.png'" onmouseout="this.src='img/charmsbar/devices.png'"/><br/>
+<img src="img/charmsbar/settings.png" onmouseover="this.src='img/charmsbar/settings-hover.png'" onmouseout="this.src='img/charmsbar/settings.png'" onclick="settingsc()"/><br/>
+</div>
+<div id="datetime">
+<img src="img/network.png" id="iconnetwork" height="24px" width="24px"/>
+<img src="img/battery.png" id="iconbattery"/>
+<span id="time"></span>
+<script language="javascript" type="text/javascript">
+<!-- Begin
+function clock() {
+var digital = new Date();
+var hours = digital.getHours();
+var minutes = digital.getMinutes();
+var seconds = digital.getSeconds();
+var amOrPm = "AM";
+if (hours > 11) amOrPm = "PM";
+if (hours > 12) hours = hours - 12;
+if (hours == 0) hours = 12;
+if (minutes <= 9) minutes = "0" + minutes;
+if (seconds <= 9) seconds = "0" + seconds;
+dispTime = hours + ":" + minutes ;
+document.getElementById('time').innerHTML = dispTime;
+setTimeout("clock()", 1000);
+}
+window.onmouseover=clock;
+//  End -->
+</script>
+<div id="date"><script language="Javascript">
+
+ var dayName = new Array ("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
+
+ var monName = new Array ("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")
+
+ var now = new Date
+
+ document.write("" + dayName[now.getDay()] + "<br/>" +"<span id=month>" + monName[now.getMonth()] + " "+now.getDate() +"")
+ </script>
+</div>
+</div>
+<div id="bottomhoverarea" onmouseover="charms()" class="hotcorner">
+</div>
+<div id="starthoverarea" onmouseover="start()" class="hotcorner">
+</div>
+<div id="startbutton" onmouseout="destroystart()">
+<a href="../start/index.html"><img src="img/start.png"/></a>
+</div>
+</body>
+</html>

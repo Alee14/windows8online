@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame 
+       Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>Notes</title>
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+  <link rel="stylesheet" href="common.css"/>
+  <link rel="stylesheet" rev="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.3/themes/base/jquery-ui.css" type="text/css" media="all" />
+
+  <script>
+function charms(){
+	document.getElementById('charmsbar').style.display='block';
+	document.getElementById('datetime').style.display='block';
+}
+function destroycharms() {
+	document.getElementById('charmsbar').style.display='none';
+	document.getElementById('datetime').style.display='none';
+}
+function start(){
+	document.getElementById('startbutton').style.display='block';
+}
+function destroystart() {
+	document.getElementById('startbutton').style.display='none';
+}
+</script>
+</head>
+<body>
+<div id="splashscreen">
+</div>
+    <button id="btn-addNote"/><img src="plus.png"/> Add note</button>
+<div id="board">
+
+
+</div>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="js/scripts.js"></script>
+
+
+</div>  
+<div id="hoverarea" onmouseover="charms()" class="hotcorner">
+</div>
+<div id="charmsbar" onmouseover="charms()" onmouseout="destroycharms()">
+<img src="../../common/img/charmsbar/search.png" onmouseover="this.src='../../common/img/charmsbar/search-hover.png'" onmouseout="this.src='../../common/img/charmsbar/search.png'"/><br/>
+<img src="../../common/img/charmsbar/share.png" onmouseover="this.src='../../common/img/charmsbar/share-hover.png'" onmouseout="this.src='../../common/img/charmsbar/share.png'"/><br/>
+<a href="../../start/index.html"><img src="../../common/img/charmsbar/start.png" onmouseover="this.src='../../common/img/charmsbar/start-hover.png'" onmouseout="this.src='../../common/img/charmsbar/start.png'"/></a><br/>
+<img src="../../common/img/charmsbar/devices.png" onmouseover="this.src='../../common/img/charmsbar/devices-hover.png'" onmouseout="this.src='../../common/img/charmsbar/devices.png'"/><br/>
+<img src="../../common/img/charmsbar/settings.png" onmouseover="this.src='../../common/img/charmsbar/settings-hover.png'" onmouseout="this.src='../../common/img/charmsbar/settings.png'" onclick="settingsc()"/><br/>
+</div>
+<div id="datetime">
+<img src="../../common/img/network.png" id="iconnetwork" height="24px" width="24px"/>
+<img src="../../common/img/battery.png" id="iconbattery"/>
+<span id="time"></span>
+<script language="javascript" type="text/javascript">
+<!-- Begin
+function clock() {
+var digital = new Date();
+var hours = digital.getHours();
+var minutes = digital.getMinutes();
+var seconds = digital.getSeconds();
+var amOrPm = "AM";
+if (hours > 11) amOrPm = "PM";
+if (hours > 12) hours = hours - 12;
+if (hours == 0) hours = 12;
+if (minutes <= 9) minutes = "0" + minutes;
+if (seconds <= 9) seconds = "0" + seconds;
+dispTime = hours + ":" + minutes ;
+document.getElementById('time').innerHTML = dispTime;
+setTimeout("clock()", 1000);
+}
+window.onload=clock;
+//  End -->
+</script>
+<div id="date"><script language="Javascript">
+
+ var dayName = new Array ("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
+
+ var monName = new Array ("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")
+
+ var now = new Date
+
+ document.write("" + dayName[now.getDay()] + "<br/>" +"<span id=month>" + monName[now.getMonth()] + " "+now.getDate() +"")
+ </script>
+</div>
+</div>
+<div id="bottomhoverarea" onmouseover="charms()" class="hotcorner">
+</div>
+<div id="starthoverarea" onmouseover="start()" class="hotcorner">
+</div>
+<div id="startbutton" onmouseout="destroystart()">
+<a href="../../start/index.html"><img src="../../common/img/start.png"/></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<title>Login to Windows</title>
+<link rel="stylesheet" href="style.css"/>
+<link rel="shortcut icon" href="../favicon.ico"/>
+<script>
+var passwd = 'document.getElementById('passwd')';
+</script>
+</head>
+<body>
+<div id="login">
+			<div id="login_box">
+				<img src="img/user.png" width="200" height="200" />
+				<form>
+					<p>
+						Anonymous User<br />
+						<span>user@email.com</span>
+					</p>
+					<fieldset class="toggle">
+						<input type="password" id="passwd" placeholder="No password required"/>
+						<a href="../start/index.html"><img src="go.png" id="go"  onMouseDown="this.src='go-active.png'" onMouseUp="this.src='go.png'"/></a>
+						<img src="eye.png" id="showpwd" onMouseDown="passwd.type='text';this.src='eye-active.png'" onMouseUp="passwd.type='password';this.src='eye.png'" onMouseout="passwd.type='password'"/>
+					</fieldset>
+					<div class="toggle" id="welcome">
+						Welcome
+					</div>
+					<div class="toggle" id="incorrect">
+						<span>Incorrect</span><br />
+						<a href="#" id="back_btn"></a>
+					</div>
+				</form>
+			</div>
+		</div>
+</div>

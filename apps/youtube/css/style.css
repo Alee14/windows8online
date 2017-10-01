@@ -1,0 +1,120 @@
+body {
+    background-image:url('img/bg.png');
+    background-color:rgb(235, 235, 235);
+    color:#000000;
+    font-family:Segoe UI;
+    margin:0px;
+    padding:0px;
+}
+ 
+.search_input {
+    font-family: Segoe UI;
+    position: relative;
+    overflow: hidden;
+    height: 35px;
+    margin-left:15%;
+    margin-top:15px;
+    padding:8px;
+    width:70%;
+    font-size: 14px;
+    line-height: 30px;
+    background-color: rgb(255, 255, 255);
+    -moz-box-sizing: border-box;
+    border-radius:3px;
+    transition: border-color 0.2s ease 0s;
+    border: 1px solid rgb(204, 204, 204);
+    box-shadow: 0px 1px 2px rgb(238, 238, 238) inset;
+    outline: medium none;
+    display:inline-block;
+    transition:all 1s;
+}
+.search_input:hover {
+    border-color:rgb(185, 185, 185);
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3) inset;
+}
+.search_input:focus {
+    border-color:rgb(28, 98, 185);
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3) inset;
+}
+#hugelogo {
+    margin-top:70px;
+    margin-bottom: 60px;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    width:400px;
+}
+#logo {
+    display: none;
+    position:absolute;
+    margin:10px;
+}
+#input_box {
+    text-align:left;
+}
+#viewer {
+    display:none;
+    position:absolute;
+    background-color:#FFF;
+    bottom:0px;
+    border:none;
+}
+.result {
+    background-color:#000;
+    margin-top:25px;
+    min-height:218px;
+    width:340px;
+    border:solid 10px #ffffff;
+    float:left;
+    margin-left:10px;
+    overflow:hidden;
+    overflow:auto;
+    border-radius:3px;
+}
+.result:hover {
+    box-shadow:0px 1px 2px #CCC;
+}
+.result a {
+    display:inline-block;
+    width:340px;
+    color:#36C;
+    text-decoration:none;
+}
+.result a:hover {
+    text-decoration:underline;
+}
+#video {
+    background-color:#FFFFFF;
+    margin-left:auto;
+    margin-right: auto;
+    width:90%;
+}
+#close {
+    float:right;
+    display:none;
+    margin:1.5%;
+}
+ 
+#title {
+    background-color:#fff;
+    font-size:14px;
+    text-align:left;
+    padding-bottom:8px;
+    height:30px;
+    overflow:hidden;
+}
+#no {
+    margin-top:50px;
+    padding:20px;
+    background-color:#F23838;
+    font-size:25px;
+    font-family: Segoe UI Light;
+    color:#FFF;
+    border:1px solid #C40000;
+    border-radius:3px;
+}
+#tipbox {
+    font-size:10pt;
+    width:600px;
+    margin-top:40px;
+}

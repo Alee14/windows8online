@@ -1,0 +1,14 @@
+body {
+	font-family: Segoe UI;
+	margin:20px;
+}
+#title {
+	font : normal 48pt Segoe UI Light;
+	display:inline;
+}
+h2 {
+	font:normal 24pt Segoe UI Light;
+}
+p {
+	font-size:9pt;
+}

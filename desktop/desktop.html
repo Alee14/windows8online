@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<meta name="description" content="Online Windows 8 desktop" />
+<title>Desktop</title>
+<link rel="stylesheet" href="assets/stylesheets/html.css" />
+<link rel="stylesheet" id="desktopstyle" href="assets/stylesheets/desktop.css" />
+<link rel="shortcut icon" href="favicon.ico" />
+<!--[if gte IE 7]>
+<link rel="stylesheet" href="assets/stylesheets/ie.css" />
+<![endif]-->
+    <!--Stylesheet that styles the charms bar and the startbutton -->
+    <link rel="stylesheet" href="css/charms.css"/>
+    <link rel="stylesheet" href="css/scrollbar.css"/>
+
+
+    <!--Script that powers the charms bar-->
+    <script>
+function charms(){
+	document.getElementById('charmsbar').style.display='block';
+	document.getElementById('datetime').style.display='block';
+}
+function destroycharms() {
+	document.getElementById('charmsbar').style.display='none';
+	document.getElementById('datetime').style.display='none';
+}
+function start(){
+	document.getElementById('startbutton').style.display='block';
+}
+function destroystart() {
+	document.getElementById('startbutton').style.display='none';
+}
+    </script>
+    <script>
+var settingscharms = 'document.getElementById('settingscharms')';
+</script>
+    <script>
+function glass() {
+	document.getElementById('desktopstyle').href='assets/stylesheets/desktop-glass.css';
+};
+function unglass() {
+	document.getElementById('desktopstyle').href='assets/stylesheets/desktop.css';
+};
+</script>
+</head>
+<body>
+<div class="abs" id="desktop">
+	<a class="abs icon" style="left:20px;top:20px;" href="#icon_dock_computer">
+		<img src="assets/images/icons/icon_32_computer.png" />
+		Computer
+	</a>
+	<a class="abs icon" style="left:20px;top:100px;" href="#icon_dock_drive">
+		<img src="assets/images/icons/icon_32_drive.png" />
+		Hard Drive
+	</a>
+	<a class="abs icon" style="left:20px;top:180px;" href="#icon_dock_disc">
+		<img src="assets/images/icons/icon_32_disc.png" />
+		Audio CD
+	</a>
+	<a class="abs icon" style="left:20px;top:260px;" href="#icon_dock_network">
+		<img src="assets/images/icons/icon_32_network.png" />
+		Network
+	</a>
+	<a class="abs icon" style="left:20px;top:340px;" href="#icon_dock_ie">
+		<img src="assets/images/icons/icon_32_ie.png" />
+		Internet Explorer
+	</a>
+	<div id="window_computer" class="abs window">
+		<div class="abs window_inner">
+			<div class="window_top">
+				<span class="float_left">
+					<img src="assets/images/icons/icon_16_computer.png" />
+				</span>
+				<span class="center">
+					Computer
+				</span>
+				<span class="float_right">
+					<a href="#" class="window_min"></a>
+					<a href="#" class="window_resize"></a>
+					<a href="#icon_dock_computer" class="window_close"></a>
+				</span>
+			</div>
+			<div class="abs window_content">
+				<div class="window_navbar">
+					<img src="assets/images/gui/back.png" onmouseover="this.src='assets/images/gui/back-hover.png';" onmouseout="this.src='assets/images/gui/back.png';" onmousedown="this.src='assets/images/gui/back-active.png';" onmouseup="this.src='assets/images/gui/back-hover.png';" class="back"/>
+					<img src="assets/images/gui/forward.png" onmouseover="this.src='assets/images/gui/forward-hover.png';" onmouseout="this.src='assets/images/gui/forward.png';" onmousedown="this.src='assets/images/gui/forward-active.png';" onmouseup="this.src='assets/images/gui/forward-hover.png';" class="forward"/>
+					<img src="assets/images/gui/dropdown.png" onmouseover="this.src='assets/images/gui/dropdown-hover.png';" onmouseout="this.src='assets/images/gui/dropdown.png';" onmousedown="this.src='assets/images/gui/dropdown-active.png';" onmouseup="this.src='assets/images/gui/dropdown-hover.png';" class="dropdownh"/>
+					<img src="assets/images/gui/up.png" class="up"/>
+					<fieldset class="addressform">
+					<input type="text" class="addressbar"/>
+					<img src="assets/images/gui/reload.png" class="reload"/>
+					<img src="assets/images/gui/dropdown.png" class="dropdown"/>
+					</fieldset>
+					<fieldset class="search">
+					<input type="text" class="searchbox"/>
+					<img src="assets/images/gui/search.png" class="go"/>
+					</fieldset>
+				</div>
+				<div class="window_aside">
+					You have no folders to browse :(. Please create one.
+				</div>
+				<div class="window_main">
+					<table class="data">
+						<tr class="sortdata">
+							<th class="shrink">
+								&nbsp;
+							</th>
+							<th>
+								Name
+							</th>
+							<th>
+								Date Modified
+							</th>
+							<th>
+								Date Created
+							</th>
+							<th>
+								Size
+							</th>
+							<th>
+								Kind
+							</th>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_drive.png" />
+							</td>
+							<td>
+								Hard Drive
+							</td>
+							<td>
+								Today
+							</td>
+							<td>
+								&mdash;
+							</td>
+							<td>
+								200 GB
+							</td>
+							<td>
+								Volume
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_disc.png" />
+							</td>
+							<td>
+								Audio CD
+							</td>
+							<td>
+								&mdash;
+							</td>
+							<td>
+								&mdash;
+							</td>
+							<td>
+								2.92 GB
+							</td>
+							<td>
+								Media
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_network.png" />
+							</td>
+							<td>
+								Network
+							</td>
+							<td>
+								&mdash;
+							</td>
+							<td>
+								&mdash;
+							</td>
+							<td>
+								&mdash;
+							</td>
+							<td>
+								LAN
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_folder_remote.png" />
+							</td>
+							<td>
+								Shared Project Files
+							</td>
+							<td>
+								Yesterday
+							</td>
+							<td>
+								12/29/08
+							</td>
+							<td>
+								524 MB
+							</td>
+							<td>
+								Folder
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_documents.png" />
+							</td>
+							<td>
+								Documents
+							</td>
+							<td>
+								Yesterday
+							</td>
+							<td>
+								12/29/08
+							</td>
+							<td>
+								524 MB
+							</td>
+							<td>
+								Folder
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_system.png" />
+							</td>
+							<td>
+								Preferences
+							</td>
+							<td>
+								&mdash;
+							</td>
+							<td>
+								&mdash;
+							</td>
+							<td>
+								&mdash;
+							</td>
+							<td>
+								System
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_trash.png" />
+							</td>
+							<td>
+								Trash
+							</td>
+							<td>
+								Today
+							</td>
+							<td>
+								&mdash;
+							</td>
+							<td>
+								&mdash;
+							</td>
+							<td>
+								Bin
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="abs window_bottom">
+				7 items
+			</div>
+		</div>
+		<span class="abs ui-resizable-handle ui-resizable-se"></span>
+	</div>
+	<div id="window_drive" class="abs window">
+		<div class="abs window_inner">
+			<div class="window_top">
+				<span class="float_left">
+					<img src="assets/images/icons/icon_16_drive.png" />
+				</span>
+				<span class="center">
+					Hard Drive
+				</span>
+				<span class="float_right">
+					<a href="#" class="window_min"></a>
+					<a href="#" class="window_resize"></a>
+					<a href="#icon_dock_drive" class="window_close"></a>
+				</span>
+			</div>
+			<div class="abs window_content">
+				<div class="window_navbar">
+					<img src="assets/images/gui/back.png" onmouseover="this.src='assets/images/gui/back-hover.png';" onmouseout="this.src='assets/images/gui/back.png';" onmousedown="this.src='assets/images/gui/back-active.png';" onmouseup="this.src='assets/images/gui/back-hover.png';" class="back"/>
+					<img src="assets/images/gui/forward.png" onmouseover="this.src='assets/images/gui/forward-hover.png';" onmouseout="this.src='assets/images/gui/forward.png';" onmousedown="this.src='assets/images/gui/forward-active.png';" onmouseup="this.src='assets/images/gui/forward-hover.png';" class="forward"/>
+					<img src="assets/images/gui/dropdown.png" onmouseover="this.src='assets/images/gui/dropdown-hover.png';" onmouseout="this.src='assets/images/gui/dropdown.png';" onmousedown="this.src='assets/images/gui/dropdown-active.png';" onmouseup="this.src='assets/images/gui/dropdown-hover.png';" class="dropdownh"/>
+					<img src="assets/images/gui/up.png" class="up"/>
+					<fieldset class="addressform">
+					<input type="text" class="addressbar"/>
+					<img src="assets/images/gui/reload.png" class="reload"/>
+					<img src="assets/images/gui/dropdown.png" class="dropdown"/>
+					</fieldset>
+					<fieldset class="search">
+					<input type="text" class="searchbox"/>
+					<img src="assets/images/gui/search.png" class="go"/>
+					</fieldset>
+				</div>
+				<div class="window_aside">
+					Storage in use: 119.1 GB
+				</div>
+				<div class="window_main">
+					<table class="data">
+						<tr class="sortdata">
+							<th class="shrink">
+								&nbsp;
+							</th>
+							<th>
+								Name
+							</th>
+							<th>
+								Date Modified
+							</th>
+							<th>
+								Date Created
+							</th>
+							<th>
+								Size
+							</th>
+							<th>
+								Kind
+							</th>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_page.png" />
+							</td>
+							<td>
+								.DS_Store
+							</td>
+							<td>
+								Yesterday
+							</td>
+							<td>
+								&mdash;
+							</td>
+							<td>
+								6 KB
+							</td>
+							<td>
+								Hidden
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_folder_home.png" />
+							</td>
+							<td>
+								Default User
+							</td>
+							<td>
+								Today
+							</td>
+							<td>
+								&mdash;
+							</td>
+							<td>
+								&mdash;
+							</td>
+							<td>
+								Folder
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_folder.png" />
+							</td>
+							<td>
+								Applications
+							</td>
+							<td>
+								Yesterday
+							</td>
+							<td>
+								&mdash;
+							</td>
+							<td>
+								&mdash;
+							</td>
+							<td>
+								Folder
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_folder.png" />
+							</td>
+							<td>
+								Developer
+							</td>
+							<td>
+								12/29/08
+							</td>
+							<td>
+								&mdash;
+							</td>
+							<td>
+								&mdash;
+							</td>
+							<td>
+								Folder
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_folder.png" />
+							</td>
+							<td>
+								Library
+							</td>
+							<td>
+								09/11/09
+							</td>
+							<td>
+								&mdash;
+							</td>
+							<td>
+								&mdash;
+							</td>
+							<td>
+								Folder
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_folder.png" />
+							</td>
+							<td>
+								System
+							</td>
+							<td>
+								Yesterday
+							</td>
+							<td>
+								&mdash;
+							</td>
+							<td>
+								&mdash;
+							</td>
+							<td>
+								Folder
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="abs window_bottom">
+				Free: 80.9 GB
+			</div>
+		</div>
+		<span class="abs ui-resizable-handle ui-resizable-se"></span>
+	</div>
+	<div id="window_disc" class="abs window">
+		<div class="abs window_inner">
+			<div class="window_top">
+				<span class="float_left">
+					<img src="assets/images/icons/icon_16_disc.png" />
+
+				</span>
+				<span class="center">
+					Audio CD - Title of Album
+				</span>
+				<span class="float_right">
+					<a href="#" class="window_min"></a>
+					<a href="#" class="window_resize"></a>
+					<a href="#icon_dock_disc" class="window_close"></a>
+				</span>
+			</div>
+				</div>
+			<div class="abs window_content">
+				<div class="window_navbar">
+					<img src="assets/images/gui/back.png" onmouseover="this.src='assets/images/gui/back-hover.png';" onmouseout="this.src='assets/images/gui/back.png';" onmousedown="this.src='assets/images/gui/back-active.png';" onmouseup="this.src='assets/images/gui/back-hover.png';" class="back"/>
+					<img src="assets/images/gui/forward.png" onmouseover="this.src='assets/images/gui/forward-hover.png';" onmouseout="this.src='assets/images/gui/forward.png';" onmousedown="this.src='assets/images/gui/forward-active.png';" onmouseup="this.src='assets/images/gui/forward-hover.png';" class="forward"/>
+					<img src="assets/images/gui/dropdown.png" onmouseover="this.src='assets/images/gui/dropdown-hover.png';" onmouseout="this.src='assets/images/gui/dropdown.png';" onmousedown="this.src='assets/images/gui/dropdown-active.png';" onmouseup="this.src='assets/images/gui/dropdown-hover.png';" class="dropdownh"/>
+					<img src="assets/images/gui/up.png" class="up"/>
+					<fieldset class="addressform">
+					<input type="text" class="addressbar"/>
+					<img src="assets/images/gui/reload.png" class="reload"/>
+					<img src="assets/images/gui/dropdown.png" class="dropdown"/>
+					</fieldset>
+					<fieldset class="search">
+					<input type="text" class="searchbox"/>
+					<img src="assets/images/gui/search.png" class="go"/>
+					</fieldset>
+				</div>
+				<div class="window_aside align_center">
+					<img src="assets/images/misc/album_cover.jpg" />
+					<br />
+					<em>Title of Album</em>
+				</div>
+				<div class="window_main">
+					<table class="data">
+						<tr class="sortdata">
+							<th class="shrink">
+								&nbsp;
+							</th>
+							<th class="shrink">
+								Track
+							</th>
+							<th>
+								Song Name
+							</th>
+							<th class="shrink">
+								Length
+							</th>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_music.png" />
+							</td>
+							<td class="align_center">
+								01
+							</td>
+							<td>
+								Track One
+							</td>
+							<td class="align_right">
+								3:50
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_music.png" />
+							</td>
+							<td class="align_center">
+								02
+							</td>
+							<td>
+								Track Two
+							</td>
+							<td class="align_right">
+								3:50
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_music.png" />
+							</td>
+							<td class="align_center">
+								03
+							</td>
+							<td>
+								Track Three
+							</td>
+							<td class="align_right">
+								4:02
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_music.png" />
+							</td>
+							<td class="align_center">
+								04
+							</td>
+							<td>
+								Track Four
+							</td>
+							<td class="align_right">
+								3:47
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_music.png" />
+							</td>
+							<td class="align_center">
+								05
+							</td>
+							<td>
+								Track Five
+							</td>
+							<td class="align_right">
+								4:38
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_music.png" />
+							</td>
+							<td class="align_center">
+								06
+							</td>
+							<td>
+								Track Six
+							</td>
+							<td class="align_right">
+								3:16
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_music.png" />
+							</td>
+							<td class="align_center">
+								07
+							</td>
+							<td>
+								Track Seven
+							</td>
+							<td class="align_right">
+								3:53
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_music.png" />
+							</td>
+							<td class="align_center">
+								08
+							</td>
+							<td>
+								Track Eight
+							</td>
+							<td class="align_right">
+								1:41
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_music.png" />
+							</td>
+							<td class="align_center">
+								09
+							</td>
+							<td>
+								Track Nine
+							</td>
+							<td class="align_right">
+								3:40
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_music.png" />
+							</td>
+							<td class="align_center">
+								10
+							</td>
+							<td>
+								Track Ten
+							</td>
+							<td class="align_right">
+								4:33
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_music.png" />
+							</td>
+							<td class="align_center">
+								11
+							</td>
+							<td>
+								Track Eleven
+							</td>
+							<td class="align_right">
+								3:49
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_music.png" />
+							</td>
+							<td class="align_center">
+								12
+							</td>
+							<td>
+								Track Twelve
+							</td>
+							<td class="align_right">
+								1:11
+							</td>
+						</tr>
+						<tr>
+							<td class="shrink">
+								<img src="assets/images/icons/icon_16_music.png" />
+							</td>
+							<td class="align_center">
+								13
+							</td>
+							<td>
+								Track Thirteen
+							</td>
+							<td class="align_right">
+								6:17
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="abs window_bottom">
+				Genre: Rock/Rap
+			</div>
+		<span class="abs ui-resizable-handle ui-resizable-se"></span>
+		</div>
+
+	</div>
+	<div id="window_network" class="abs window">
+		<div class="abs window_inner">
+			<div class="window_top">
+				<span class="float_left">
+					<img src="assets/images/icons/icon_16_network.png" />
+				</span>
+				<span class="center">
+					Network
+				</span>
+				<span class="float_right">
+					<a href="#" class="window_min"></a>
+					<a href="#" class="window_resize"></a>
+					<a href="#icon_dock_network" class="window_close"></a>
+				</span>
+			</div>
+			<div class="abs window_content">
+				<div class="window_navbar">
+					<img src="assets/images/gui/back.png" onmouseover="this.src='assets/images/gui/back-hover.png';" onmouseout="this.src='assets/images/gui/back.png';" onmousedown="this.src='assets/images/gui/back-active.png';" onmouseup="this.src='assets/images/gui/back-hover.png';" class="back"/>
+					<img src="assets/images/gui/forward.png" onmouseover="this.src='assets/images/gui/forward-hover.png';" onmouseout="this.src='assets/images/gui/forward.png';" onmousedown="this.src='assets/images/gui/forward-active.png';" onmouseup="this.src='assets/images/gui/forward-hover.png';" class="forward"/>
+					<img src="assets/images/gui/dropdown.png" onmouseover="this.src='assets/images/gui/dropdown-hover.png';" onmouseout="this.src='assets/images/gui/dropdown.png';" onmousedown="this.src='assets/images/gui/dropdown-active.png';" onmouseup="this.src='assets/images/gui/dropdown-hover.png';" class="dropdownh"/>
+					<img src="assets/images/gui/up.png" class="up"/>
+					<fieldset class="addressform">
+					<input type="text" class="addressbar"/>
+					<img src="assets/images/gui/reload.png" class="reload"/>
+					<img src="assets/images/gui/dropdown.png" class="dropdown"/>
+					</fieldset>
+					<fieldset class="search">
+					<input type="text" class="searchbox"/>
+					<img src="assets/images/gui/search.png" class="go"/>
+					</fieldset>
+				</div>
+				<div class="window_aside">
+					Local Network Resources
+				</div>
+				<div class="window_main">
+					<table class="data">
+						<tr class="sortdata">
+							<th class="shrink">
+								&nbsp;
+							</th>
+							<th>
+								Name
+							</th>
+							<th class="shrink">
+								Operating System
+							</th>
+							<th class="shrink">
+								Version
+							</th>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_server.png" />
+							</td>
+							<td>
+								Urban Terror - <em>Game Server</em>
+							</td>
+							<td>
+								Linux
+							</td>
+							<td>
+								Ubuntu
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_folder_remote.png" />
+							</td>
+							<td>
+								Shared Project Files
+							</td>
+							<td>
+								Linux
+							</td>
+							<td>
+								Red Hat
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_vpn.png" />
+							</td>
+							<td>
+								Remote Desktop VPN
+							</td>
+							<td>
+								Windows
+							</td>
+							<td>
+								XP
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_computer.png" />
+							</td>
+							<td>
+								Lance Dacy
+							</td>
+							<td>
+								Mac OS
+							</td>
+							<td>
+								10.5
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_computer.png" />
+							</td>
+							<td>
+								Jingyi Wang
+							</td>
+							<td>
+								Mac OS
+							</td>
+							<td>
+								10.6
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_computer.png" />
+							</td>
+							<td>
+								Matt Vasquez
+							</td>
+							<td>
+								Mac OS
+							</td>
+							<td>
+								10.6
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_computer.png" />
+							</td>
+							<td>
+								David Brooks
+							</td>
+							<td>
+								Mac OS
+							</td>
+							<td>
+								10.5
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_computer.png" />
+							</td>
+							<td>
+								Chad Meyer
+							</td>
+							<td>
+								Mac OS
+							</td>
+							<td>
+								10.5
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_computer.png" />
+							</td>
+							<td>
+								Nathan Smith
+							</td>
+							<td>
+								Mac OS
+							</td>
+							<td>
+								10.5
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_computer.png" />
+							</td>
+							<td>
+								Nick Floyd
+							</td>
+							<td>
+								Windows
+							</td>
+							<td>
+								7
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_computer.png" />
+							</td>
+							<td>
+								Tim Hardy
+							</td>
+							<td>
+								Windows
+							</td>
+							<td>
+								Vista
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_computer.png" />
+							</td>
+							<td>
+								Mark Lindsley
+							</td>
+							<td>
+								Windows
+							</td>
+							<td>
+								Vista
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_computer.png" />
+							</td>
+							<td>
+								Jas Singh
+							</td>
+							<td>
+								Windows
+							</td>
+							<td>
+								Vista
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_computer.png" />
+							</td>
+							<td>
+								Scott Lowry
+							</td>
+							<td>
+								Windows
+							</td>
+							<td>
+								Vista
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_computer.png" />
+							</td>
+							<td>
+								Coly Gutekunst
+							</td>
+							<td>
+								Windows
+							</td>
+							<td>
+								Vista
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_computer.png" />
+							</td>
+							<td>
+								Bryan Mikaelian
+							</td>
+							<td>
+								Windows
+							</td>
+							<td>
+								Vista
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_computer.png" />
+							</td>
+							<td>
+								Peter Schott
+							</td>
+							<td>
+								Windows
+							</td>
+							<td>
+								Vista
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_computer.png" />
+							</td>
+							<td>
+								Jeff Rush
+							</td>
+							<td>
+								Windows
+							</td>
+							<td>
+								Vista
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_computer.png" />
+							</td>
+							<td>
+								Kelly Klein
+							</td>
+							<td>
+								Windows
+							</td>
+							<td>
+								Vista
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_computer.png" />
+							</td>
+							<td>
+								Jesse Dearing
+							</td>
+							<td>
+								Windows
+							</td>
+							<td>
+								Vista
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/icons/icon_16_computer.png" />
+							</td>
+							<td>
+								Ryan Champ
+							</td>
+							<td>
+								Windows
+							</td>
+							<td>
+								Vista
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="abs window_bottom">
+				LAN: Corporate Intranet
+			</div>
+		</div>
+		<span class="abs ui-resizable-handle ui-resizable-se"></span>
+	</div>
+</div>
+	<div id="window_ie" class="abs window">
+		<div class="abs window_inner">
+			<div class="window_top topie">
+				<span class="float_right">
+					<a href="#" class="window_min"></a>
+					<a href="#" class="window_resize"></a>
+					<a href="#icon_dock_ie" class="window_close"></a>
+				</span><br/>
+				<div class="navbarie">
+				<span class="float_left">
+					<img src="assets/images/ie/backforward.png" id="navbuttons"/>
+					<fieldset id="ie">
+					<input type="text" class="addressbar"/>
+					<!--img src="assets/images/gui/go.png" class="iego"/-->
+					<img src="assets/images/gui/reload.png" class="reload"/>
+					</fieldset>
+					<div id="tabs">
+					<div id="tab">
+					<img src="assets/images/ie/favicon.png"/>
+					Bing
+					</div>
+					<div id="greytab">
+					</div>
+					</div>
+				</span>
+				<span class="float_right iebuttons">
+					<img src="assets/images/ie/home.png" onmouseover="this.src='assets/images/ie/home-hover.png';" onmouseout="this.src='assets/images/ie/home.png';" onmousedown="this.src='assets/images/ie/home-active.png';" onmouseup="this.src='assets/images/ie/home-hover.png';"/>
+					<img src="assets/images/ie/favourites.png" onmouseover="this.src='assets/images/ie/favourites-hover.png';" onmouseout="this.src='assets/images/ie/favourites.png';" onmousedown="this.src='assets/images/ie/favourites-active.png';" onmouseup="this.src='assets/images/ie/favourites-hover.png';"/>
+					<img src="assets/images/ie/settings.png" onmouseover="this.src='assets/images/ie/settings-hover.png';" onmouseout="this.src='assets/images/ie/settings.png';" onmousedown="this.src='assets/images/ie/settings-active.png';" onmouseup="this.src='assets/images/ie/settings-hover.png';"/>
+				</span>
+				</div>
+			</div>
+
+
+			<div class="abs window_content contie">
+				<div class="window_main ie">
+					<iframe src="http://bing.com" id="iframeie" height="100%" width="100%"></iframe>
+				</div>
+
+			</div>
+		</div>
+		<span class="abs ui-resizable-handle ui-resizable-se"></span>
+	</div>
+<div class="abs" id="bar_bottom">
+	<a class="float_right" href="#" id="show_desktop" title="Show Desktop">
+	</a>
+	<ul id="dock">
+		<li id="icon_dock_computer">
+			<a href="#window_computer">
+				<img src="assets/images/icons/icon_32_computer.png" />
+			</a>
+		</li>
+		<li id="icon_dock_drive">
+			<a href="#window_drive">
+				<img src="assets/images/icons/icon_32_drive.png" />
+				
+			</a>
+		</li>
+		<li id="icon_dock_disc">
+			<a href="#window_disc">
+				<img src="assets/images/icons/icon_32_disc.png" />
+				
+			</a>
+		</li>
+		<li id="icon_dock_network">
+			<a href="#window_network">
+				<img src="assets/images/icons/icon_32_network.png" />
+				
+			</a>
+		</li>
+		<li id="icon_dock_ie">
+			<a href="#window_ie">
+				<img src="assets/images/icons/icon_32_ie.png" />
+				
+			</a>
+		</li>
+	</ul>
+	<span class="float_right" id="clock"></span><br/>
+	<span class="float_right" id="weekday"></span>
+</div>
+    <!-- CHARMS BAR CODE -->
+    <div id="hoverarea" onmouseover="charms()" class="hotcorner">
+    </div>
+    <div id="charmsbar" onmouseover="charms()" onmouseout="destroycharms()">
+    <img src="img/charmsbar/search.png" onmouseover="this.src='img/charmsbar/search-hover.png'" onmouseout="this.src='img/charmsbar/search.png'"/><br/>
+    <img src="img/charmsbar/share.png" onmouseover="this.src='img/charmsbar/share-hover.png'" onmouseout="this.src='img/charmsbar/share.png'"/><br/>
+    <a href="../start/index.html"><img src="img/charmsbar/start.png" onmouseover="this.src='img/charmsbar/start-hover.png'" onmouseout="this.src='img/charmsbar/start.png'"/></a><br/>
+    <img src="img/charmsbar/devices.png" onmouseover="this.src='img/charmsbar/devices-hover.png'" onmouseout="this.src='img/charmsbar/devices.png'"/><br/>
+    <img src="img/charmsbar/settings.png" onmouseover="this.src='img/charmsbar/settings-hover.png'" onmouseout="this.src='img/charmsbar/settings.png'" onclick="settingscharms.style.display='inline';"/><br/>
+    </div>
+    <div id="datetime">
+    <img src="img/charmsbar/network.png" id="iconnetwork" height="24px" width="24px"/>
+    <img src="img/charmsbar/battery.png" id="iconbattery"/>
+<span id="ctime"></span>
+<script language="javascript" type="text/javascript">
+<!-- Begin
+function clock() {
+var digital = new Date();
+var hours = digital.getHours();
+var minutes = digital.getMinutes();
+var seconds = digital.getSeconds();
+var amOrPm = "AM";
+if (hours > 11) amOrPm = "PM";
+if (hours > 12) hours = hours - 12;
+if (hours == 0) hours = 12;
+if (minutes <= 9) minutes = "0" + minutes;
+if (seconds <= 9) seconds = "0" + seconds;
+dispTime = hours + ":" + minutes ;
+document.getElementById('ctime').innerHTML = dispTime;
+setTimeout("clock()", 1000);
+}
+window.onmouseover=clock;
+//  End -->
+</script>
+    <div id="date">
+      <script>
+
+ var dayName = new Array ("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
+
+ var monName = new Array ("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")
+
+ var now = new Date
+
+ document.write("" + dayName[now.getDay()] + "<br/>" +"<span id=month>" + monName[now.getMonth()] + " "+now.getDate() +"")
+      </script>
+    </div>
+    </div>
+    <div id="bottomhoverarea" onmouseover="charms()" class="hotcorner">
+    </div>
+    <div id="starthoverarea" onmouseover="start()" class="hotcorner">
+    </div>
+    <div id="startbutton" onmouseout="destroystart()">
+    <a href="../start/index.html"><img src="img/charmsbar/startbutton.png"/></a>
+    </div>
+<div id="settingscharms">
+<img src="img/charmsbar/close.png" onclick="settingscharms.style.display='none';" class="closesettings"/>
+<div class="ch1">Settings</div>
+<div class="ch2d">Desktop</div>
+<div class="ch2">Themes</div>
+<form>
+<label for="opaque">Aero</label><input type="radio" id="opaque" name="theme" onclick="unglass();" checked="checked"/><br/>
+<label for="transparent">Aero Glass</label><input type="radio" id="transparent" name="theme" onclick="glass();"/>
+</form>
+<br/>
+<div class="ch2">Window color</div>
+</div>
+<script src="assets/javascripts/jquery.package.js"></script>
+<script src="assets/javascripts/jquery.desktop.js"></script>
+<script>
+JQD.init_desktop();
+</script>
+</body>
+</html>

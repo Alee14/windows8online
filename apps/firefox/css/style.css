@@ -1,0 +1,176 @@
+body {
+	margin:0;
+	padding:0;
+	background-color:#F8F8F8;
+}
+iframe {
+	position:absolute;
+	background-color:#FFF;
+	background-image: url('../img/firefox-watermark.png');
+	background-position: center;
+	background-repeat: no-repeat;
+}
+#navbar {
+	padding-top:10px;
+	padding-left:28px;
+	min-height:57px;
+	max-height:57px;
+}
+#back {
+	border-radius:100px;
+	display:inline-block;
+	background-image: url("../img/back.png");
+	width:48px;
+	height:48px;
+	cursor:pointer;
+}
+#forward {
+	display:inline-block;
+	width: 22px;
+	height: 25px;
+	background-image: url("../img/forward.png");
+	background-position:18px center;
+	background-repeat:no-repeat;
+	vertical-align: top;
+	margin-top: 5px;
+	margin-left:-14px;
+	border:2px solid #C0C6CC;
+	border-left:none;
+	padding: 5px 0px 5px 28px;
+	cursor:pointer;
+	z-index: -1;
+}
+#addressbar {
+	outline:none;
+	height:25px;
+	width:78%;
+	vertical-align: top;
+	margin-top: 5px;
+	margin-left:-4px;
+	padding:5px;
+	padding-left: 42px;
+	border:2px solid #C0C6CC;
+	border-left:none;
+	font-size:13pt;
+	font-family:Segoe UI;
+	background-image: url("../img/identity-icon.png");
+	background-position:10px center;
+	background-repeat:no-repeat;
+}
+#reload {
+	display:inline-block;
+	width: 23px;
+	height: 25px;
+	background-image: url("../img/reload.png");
+	background-position:0px center;
+	background-repeat:no-repeat;
+	vertical-align: top;
+	margin-top: 7px;
+	margin-left: 16px;
+	padding:5px;
+	cursor:pointer;
+}
+#go {
+	display:inline-block;
+	width: 23px;
+	height: 25px;
+	background-image: url("../img/forward.png");
+	background-position:center;
+	background-repeat:no-repeat;
+	vertical-align: top;
+	margin-top: 7px;
+	margin-left: 16px;
+	padding:5px;
+	cursor:pointer;
+}
+#newtab {
+	display:inline-block;
+	width:128px;
+	height:68px;
+	position: absolute;
+	top:-8px;
+	right:0;
+	background-image: url("../img/newtab.png"), url("../img/rightbg.png");
+	background-size:auto;
+	background-position:100px center, 40px center;
+	background-repeat:no-repeat;
+	padding:5px;
+	cursor:pointer;
+}
+#appbar {
+	position:fixed;
+	bottom:0;
+	height:66px;
+	width:100%;
+	background-color:#FF8000;
+	display:none;
+}
+#downloadbutton, #addonbutton, #bookmarkbutton, #settingsbutton, #pinbutton, #zoomin, #zoomout {
+	display:inline-block;
+	width:40px;
+	height:40px;
+	margin:13px;
+	background-image:url(../img/appbar-icons.png);
+	border:none;
+	outline:none;
+}
+#downloadbutton:hover {
+	background-position:0px -40px;
+}
+#downloadbutton:active {
+	background-position:0px -80px;
+}
+#addonbutton {
+	background-position:-40px 0px;
+}
+#addonbutton:hover {
+	background-position:-40px -40px;
+}
+#addonbutton:active {
+	background-position:-40px -80px;
+}
+#settingsbutton {
+	background-position:-160px 0px;
+}
+#settingsbutton:hover {
+	background-position:-160px -40px;
+}
+#settingsbutton:active {
+	background-position:-160px -80px;
+}
+#zoomin{
+	background-position:-80px 0px;
+}
+#zoomin:hover {
+	background-position:-80px -40px;
+}
+#zoomin:active {
+	background-position:-80px -80px;
+}
+#zoomout {
+	background-position:-120px 0px;
+}
+#zoomout:hover {
+	background-position:-120px -40px;
+}
+#zoomout:active {
+	background-position:-120px -80px;
+}
+#bookmarkbutton {
+	background-position:-320px 0px;
+}
+#bookmarkbutton:hover {
+	background-position:-320px -40px;
+}
+#bookmarkbutton:active {
+	background-position:-320px -80px;
+}
+#pinbutton {
+	background-position:-200px 0px;
+}
+#pinbutton:hover {
+	background-position:-200px -40px;
+}
+#pinbutton:active {
+	background-position:-200px -80px;
+}

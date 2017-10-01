@@ -1,0 +1,116 @@
+<!--DO NOT REMOVE THE CODE GIVEN HERE, THAT CODE POWERS THE CHARMS AND START MENU !!! -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <!--Title of the app -->
+    <title>Firefox</title>
+
+    <!--Stylesheet that styles the charms bar and the startbutton -->
+    <link rel="stylesheet" href="css/charms.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+
+    <!--Script that powers the charms bar-->
+    <script>
+    function visibility(visibility , target) {
+        document.getElementById(target).style.display=visibility;
+    }
+    </script>
+    <script>
+    function doublevisibility(visibility , target , target2) {
+        document.getElementById(target).style.display=visibility;
+        document.getElementById(target2).style.display=visibility;
+    }
+    </script>
+    <!--END Charm bar script-->
+    <script>
+    function hidereload() {
+        document.getElementById('reload').style.display='none';
+        document.getElementById('go').style.display='inline-block';
+    }
+    function showreload() {
+        document.getElementById('reload').style.display='inline-block';
+        document.getElementById('go').style.display='none';
+    }
+    </script>
+    <script>
+    var appbar = 'document.getElementById('appbar')';
+    </script>
+  </head>
+  <body oncontextmenu="appbar.style.display='inline-block';return false;" onclick="appbar.style.display='none';">
+    <div id="splashscreen"></div>
+    <!--PLACE YOUR CONTENT HERE -->
+    <div id="navbar">
+        <a id="back" onclick="content.history.back()"></a>
+        <a id="forward" onclick="content.history.forward()"></a>
+        <input id="addressbar" value="http://" class="frmUrlVal" id="URL1" onkeypress="return enableEnterKey(event)" type="text" onfocus="hidereload();" onblur="showreload();" >
+        <a id="go" onclick="document.getElementById('content').src='document.getElementById('addressbar').value;'" style="display:none;"></a>
+        <a id="reload" onclick="window.location.reload()"></a>
+        <a id="newtab"></a>
+    </div>
+    <iframe src="http://bing.com" id="content" name="content" frameborder="0" width="100%" height="90%" >Your browser doesn't support iframes.</iframe>
+    <div id="appbar">
+        <div style="float:left;">
+            <a id="downloadbutton"></a>
+            <a id="addonbutton"></a>
+        </div>
+        <div style="float:right">
+            <a id="settingsbutton"></a>
+            <a id="zoomin"></a>
+            <a id="zoomout"></a>
+            <a id="bookmarkbutton"></a>
+            <a id="pinbutton"></a>
+        </div>
+        </div>
+    </div>
+    <!-- CHARMS BAR CODE -->
+    <div id="charmsbar" onmouseover="doublevisibility('inline','charmsbar','datetime')" onmouseout="doublevisibility('none','charmsbar','datetime')" >
+    <img src="../../common/img/charmsbar/search.png" onclick="visibility('block','searchcharms')" onmouseover="this.src='../../common/img/charmsbar/search-hover.png'" onmouseout="this.src='../../common/img/charmsbar/search.png'"/><br/>
+    <img src="../../common/img/charmsbar/share.png" onclick="visibility('block','sharecharms')" onmouseover="this.src='../../common/img/charmsbar/share-hover.png'" onmouseout="this.src='../../common/img/charmsbar/share.png'"/><br/>
+    <a href="../../start/index.html"><img src="../../common/img/charmsbar/start.png" onmouseover="this.src='../../common/img/charmsbar/start-hover.png'" onmouseout="this.src='../../common/img/charmsbar/start.png'"/></a><br/>
+    <img src="../../common/img/charmsbar/devices.png" onmouseover="this.src='../../common/img/charmsbar/devices-hover.png'" onmouseout="this.src='../../common/img/charmsbar/devices.png'"/><br/>
+    <img src="../../common/img/charmsbar/settings.png" onclick="visibility('block','settingscharms')" onmouseover="this.src='../../common/img/charmsbar/settings-hover.png'" onmouseout="this.src='../../common/img/charmsbar/settings.png'"/><br/>
+    </div>
+    <div id="datetime">
+    <img src="../../common/img/charmsbar/network.png" id="iconnetwork" height="24px" width="24px"/>
+    <img src="../../common/img/charmsbar/battery.png" id="iconbattery"/>
+    <span id="ctime"></span>
+    <script>
+    function clock() {
+        var digital = new Date();
+        var hours = digital.getHours();
+        var minutes = digital.getMinutes();
+        var seconds = digital.getSeconds();
+        var amOrPm = "AM";
+        if (hours > 11) amOrPm = "PM";
+        if (hours > 12) hours = hours - 12;
+        if (hours == 0) hours = 12;
+        if (minutes <= 9) minutes = "0" + minutes;
+        if (seconds <= 9) seconds = "0" + seconds;
+        dispTime = hours + ":" + minutes ;
+        document.getElementById('ctime').innerHTML = dispTime;
+        setTimeout("clock()", 1000);
+    }
+    window.onload=clock;
+    </script>
+    <div id="date">
+      <script>
+
+ var dayName = new Array ("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
+
+ var monName = new Array ("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")
+
+ var now = new Date
+
+ document.write("" + dayName[now.getDay()] + "<br/>" +"<span id=month>" + monName[now.getMonth()] + " "+now.getDate() +"")
+      </script>
+    </div>
+    </div>
+    <div id="startbutton" onmouseout="visibility('none','startbutton')">
+    <a href="../../start/index.html"><img src="../../common/img/charmsbar/startbutton.png"/></a>
+    </div>
+    <div id="hoverarea" onmouseover="doublevisibility('inline','charmsbar','datetime')" class="hotcorner"></div>
+    <div id="bottomhoverarea" onmouseover="doublevisibility('inline','charmsbar','datetime')" class="hotcorner"></div>
+    <div id="starthoverarea" onmouseover="visibility('inline','startbutton')" class="hotcorner"></div>
+  </body>
+</html>

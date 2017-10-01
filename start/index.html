@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="x-ua-compatible" content="IE=edge">
+		<title>Start</title>
+		<!--[if IE]><style>#targetIE {margin-left:-2.5px;}</style><![endif]-->
+		<link rel="stylesheet" href="style.css"/>
+		<link rel="stylesheet" href="scrollbar.css"/>
+		<link rel="shortcut icon" href="../favicon.ico"/>
+    		<script src="jquery-1.8.0.min.js" type="text/javascript"></script>
+    		<script src="jquery-ui-1.8.23.min.js" type="text/javascript"></script>
+    		<script src="cursorpagescroll.js" type="text/javascript"></script>
+    		<script src="mousewheel.js" type="text/javascript"></script>
+		<script>
+		var sharecharms ='document.getElementById('sharecharms')';
+		var settingscharms ='document.getElementById('settingscharms')';
+		var searchcharms ='document.getElementById('searchcharms')';
+		</script>
+		<script>
+		function scale(){
+			$("#tiles").addClass("zoomoutview");
+			$("#zoomoutbutton").hide("fast");
+			$("#zoominbutton").fadeIn("fast");
+		}
+		function unscale(){
+			$("#tiles").removeClass("zoomoutview");
+			$("#zoominbutton").fadeOut("fast");
+			$("#zoomoutbutton").fadeIn("fast");
+		}
+
+		</script>	
+		<script>
+		function charms(){
+			document.getElementById('charmsbar').style.display='block';
+			document.getElementById('datetime').style.display='block';
+		}
+		function destroycharms() {
+			document.getElementById('charmsbar').style.display='none';
+			document.getElementById('datetime').style.display='none';
+		}
+		function start(){
+			document.getElementById('startbutton').style.display='block';
+		}
+		function destroystart() {
+			document.getElementById('startbutton').style.display='none';
+		}
+		</script>
+		<script>
+		function changebg(iurl) {
+			document.body.style.backgroundImage='url(' + iurl + ')';
+			document.body.style.backgroundSize='cover';
+			document.body.style.backgroundAttachment='scroll';
+		}
+		function resetbg(imgurl) {
+			document.body.style.backgroundImage='url(' + imgurl + ')';
+			document.body.style.backgroundSize='100%';
+			document.body.style.backgroundAttachment='fixed';
+		}
+		</script>
+		<script>
+		
+        	function AddMouseWheel(){
+    		        $("body").mousewheel(function(event, delta){
+    		            var scroll_value = delta * 50;
+    		            if (!jQuery.browser.chrome) {
+    		                document.documentElement.scrollLeft -= scroll_value;
+                } else {
+                    this.scrollLeft -= scroll_value;
+                }
+                return false;
+            });
+        }
+
+        $(function(){
+
+            AddMouseWheel();
+
+        })
+		</script>
+		<script>
+		$(document).ready(function() {
+    		$("#searchreset").fadeIn();			
+			$("#searchinput").keyup(function() {
+    			$("#searchreset").fadeIn();
+    	    	if ($.trim($("#searchinput").val()) == "") {
+    	    	    $("#searchreset").fadeOut();
+    	    	}
+    	});
+    	$("#searchreset").click(function() {
+      	  $("#searchinput").val("");
+      	  $(this).hide();
+    	});
+	}); 
+	</script>
+	<script type="text/javascript">
+	$(function()
+	{
+	$("#nameinput").keyup(function()
+	{
+	var name=$(this).val();
+	$("#name").html(name);
+	return false;
+	});
+	});
+	</script>
+	<script>
+	$(function()
+	{
+	$("#firstnameinput").keyup(function()
+	{
+	var firstname=$(this).val();
+	$("#firstname").html(firstname);
+	return false;
+	});
+	});
+	</script>
+</head>
+<body>
+	<div id="starttext" onclick="document.getElementById('userdropdown').style.display='none';">
+		<span>Start</span>
+	</div>
+	<div id="user" onclick="document.getElementById('userdropdown').style.display='block';">
+		<div id="names">
+			<p id="firstname">Anonymous</p>
+			<p id="name">User</p>
+		</div>
+		<img src="images/user.png" id="userimage"/>
+	</div>
+	<ul id="userdropdown">
+		<a href="../lockscreen/index.html"><li>Log out</li></a>
+		<li>Shut Down</li>
+	</ul>
+	<div id="tiles"  onclick="document.getElementById('userdropdown').style.display='none';settingscharms.style.display='none';sharecharms.style.display='none';">
+		<div class="block">
+			<div class="blocktitle">
+			<!-- Block title -->
+			</div>
+			<div class="line">
+				<div class="tile">
+					<img src="images/mail.png" height="125" width="258"/>
+					<p>Mail</p>
+				</div>
+				<div class="tile">
+					<a href="../apps/calendar/index.html">
+						<img src="images/calendar.png" height="125" width="258"/>
+					</a>
+					<p>Calendar</p>
+				</div>
+				<div class="tile">
+					<a href="../iframeapps/metroie.html">
+						<img src="images/metroie.png" height="125" width="125"/>
+					</a>
+					<p>Internet Explorer</p>
+				</div>
+				<div class="tile">
+					<a href="../store/index.html">
+						<img src="images/store.png" height="125" width="125"/>
+					</a>
+					<p>Store</p>
+				</div>
+			</div>
+			<div class="line">
+				<div class="tile">
+					<img src="images/people.png" height="125" width="125"/>
+					<p>People</p>
+				</div>
+				<div class="tile">
+					<a href="../apps/firefox/index.html">
+						<img src="images/firefox.png" height="125" width="125"/>
+					</a>
+					<p>Firefox</p>
+				</div>
+				<div class="tile">
+					<iframe src="livetiles/photos/index.html" height="125" width="258" scrolling="no" frameborder="0">Your browser doesn't support iframes !
+					</iframe>
+					<p>Photos</p>
+				</div>
+				<div class="tile">
+					<a href="../apps/maps/index.html">
+						<img src="images/maps.png" height="125" width="125"/>
+					</a>
+					<p>Maps</p>
+				</div>
+				<div class="tile">
+					<img src="images/skydrive.png" height="125" width="125"/>
+					<p>Skydrive</p>
+				</div>
+			</div>
+
+			<div class="line">
+				<div class="tile">
+					<a href="../desktop/desktop.html">
+						<img src="images/desktop.jpg" height="125" width="258"/>
+					</a>
+					<p>Desktop</p>
+				</div>
+				<div class="tile">
+					<a href="../iframeapps/weather.html">
+						<iframe src="livetiles/weather/index.html" height="125" width="258" scrolling="no" frameborder="0">Your browser doesn't support iframes !
+						</iframe>
+					</a>
+					<p>Weather</p>
+				</div>
+				<div class="tile">
+					<iframe src="livetiles/rss/index.html" height="125" width="258" scrolling="no" frameborder="0">Your browser doesn't support iframes !</iframe>
+					<p></p>
+				</div>
+			</div>
+		</div>
+		<div class="block two">
+			<div class="blocktitle">
+			
+			</div>
+			<div class="line">
+				<div class="tile">
+					<a href="../apps/smartsearch/index.html">
+						<img src="images/smartsearch.png" height="125" width="258"/>
+					</a>
+					<p class="black"></p>
+				</div>
+				<div class="tile">
+					<a href="../apps/remotedesktop/index.html">
+						<img src="images/remotedesktop.png" height="125" width="125"/>
+					</a>
+					<p>Remote Desktop</p>
+				</div>
+				<div class="tile">
+					<a href="../iframeapps/instazine.html">
+						<img src="images/instazine.png" height="125" width="125"/>
+					</a>
+					<p class="white">Instazine</p>
+				</div>
+				<div class="tile">
+					<img src="images/messaging.png" height="125" width="258"/>
+					<p>Messaging</p>
+				</div>
+			</div>
+			<div class="line">
+				<div class="tile">
+					<img src="images/sports.png" height="125" width="125"/>	
+					<p>Sports</p>
+				</div>
+				<div class="tile">
+					<img src="images/reader.png" height="125" width="125"/>
+					<p>Reader</p>
+				</div>
+				<div class="tile">
+					<a href="../apps/youtube/index.html">
+						<img src="images/youtube.png" height="125" width="258"/>
+					</a>
+					<p></p>
+				</div>
+				<div class="tile">
+					<a href="../iframeapps/camera.html">
+						<img src="images/camera.png" height="125" width="125"/>
+					</a>
+					<p>Camera</p>
+				</div>
+				<div class="tile">
+					<a href="../apps/calculator/index.html">
+						<img src="images/calc.png" height="125" width="125"/>
+					</a>
+					<p>Calculator</p>
+				</div>
+			</div>
+			<div class="line">
+				<div class="tile">
+					<img src="images/music.png" height="125" width="125"/>
+					<p>Music</p>
+				</div>
+				<div class="tile">
+					<img src="images/videos.png" height="125" width="125"/>
+					<p>Videos</p>
+				</div>
+				<div class="tile">
+					<a href="../apps/notes/index.html">
+						<img src="images/notes.png" height="125" width="125"/>
+					</a>
+				</div>
+				<div class="tile">
+					<a href="../apps/skybookmarks/index.html">
+						<img src="images/skybookmarks.png" height="125" width="125"/>
+					</a>
+					<p>SkyBookmarks</p>
+				</div>
+				<div class="tile">
+					<a href="../iframeapps/grooveshark.html">
+						<img src="images/grooveshark.png" height="125" width="258"/>
+					</a>
+					<p>Grooveshark</p>
+				</div>
+			</div>
+		</div>
+		<div class="block three">
+			<div class="blocktitle">
+			</div>
+			<div class="line">
+				<div class="tile">
+					<a href="../iframeapps/cuttherope.html">
+						<img src="images/cuttherope.png" height="125" width="258"/>
+					</a>
+				</div>
+				<div class="tile">
+					<img src="images/games.png" height="125" width="258"/>
+					<p>Games</p>
+				</div>
+				<div class="tile">
+					<a href="../games/battleship/index.html">
+						<img src="images/battleship.png" height="125" width="125"/>
+						<p>Battleship</p>
+					</a>
+				</div>
+				<div class="tile">
+					<a href="../games/symbolistic/index.html">
+						<img src="images/symbolistic.png" height="125" width="125"/>
+					</a>
+					<p>Symbolistic</p>
+				</div>
+			</div>
+			<div class="line">
+				<div class="tile">
+					<a href="../iframeapps/portal.html">
+						<img src="images/portalsmall.png" height="125" width="125"/>
+					</a>
+				</div>				
+				<div class="tile">
+					<a href="../games/pixelpaint/index.html">
+						<img src="images/pixelpaint.png" height="125" width="125"/>
+					</a>
+				</div>				
+				<div class="tile">
+					<a href="../iframeapps/pacman.html">
+						<img src="images/pacman.png" height="125" width="125"/>
+					</a>
+				</div>
+				<div class="tile">
+					<a href="../iframeapps/agent8ball.html">
+						<img src="images/agent8ball.png" height="125" width="125"/>
+					</a>
+				</div>				
+				<div class="tile">
+					<a href="../iframeapps/captainforever.html">
+						<img src="images/captainforever.gif" height="125" width="258"/>
+					</a>
+					<p>Captain Forever</p>
+				</div>
+			</div>
+			<div class="line">
+				<div class="tile">
+					<a href="../iframeapps/fruitninja.html">
+						<img src="images/fruitninja.png" height="125" width="258"/>
+					</a>
+				</div>
+				<div class="tile">
+					<a href="../iframeapps/contrejour.html">
+						<img src="images/contrejour.png" height="125" width="258"/>
+					</a>
+					<p></p>
+				</div>		
+				<div class="tile">
+					<a href="../iframeapps/angrybirds.html">
+						<img src="images/angrybirds.png" height="125" width="258"/>
+					</a>
+				</div>						
+			</div>
+		</div>
+		<div class="block four">
+			<div class="blocktitle">
+			
+			</div>
+			<div class="line">
+				<div class="shortcuttile">
+					<img src="images/metroie.png" class="shortcuticon" />
+					<div class="shortcutlabel">Shortcut template</div>
+				</div>
+				<div class="shortcuttile">
+					<img src="images/metroie.png" class="shortcuticon" />
+					<div class="shortcutlabel">Shortcut template</div>
+				</div>
+			</div>
+			<div class="line">
+				<div class="shortcuttile">
+					<img src="images/metroie.png" class="shortcuticon" />
+					<div class="shortcutlabel">Shortcut template</div>
+				</div>
+				<div class="shortcuttile">
+					<img src="images/metroie.png" class="shortcuticon" />
+					<div class="shortcutlabel">Shortcut template</div>
+				</div>
+			</div>
+			<div class="line">
+				<div class="shortcuttile">
+					<img src="images/metroie.png" class="shortcuticon" />
+					<div class="shortcutlabel">Shortcut template</div>
+				</div>
+				<div class="shortcuttile">
+					<img src="images/metroie.png" class="shortcuticon" />
+					<div class="shortcutlabel">Shortcut template</div>
+				</div>
+			</div>
+		</div>
+		<div class="block five">
+			<div class="blocktitle">
+			
+			</div>
+			<div class="line">
+				<div class="nobackground rectangle tile">
+					This website was created to almost simulate the feeling of Windows 8 online made completely out of HTML and CSS. The tiles all work. You can even try the desktop !! Thanks for downloading and enjoy !!
+					<br/>
+					Made by ntim007, DaKoder, link6155 and blindbartemais.
+				</div>
+			</div>
+			<div class="line">
+				<div class="tile">
+					<a href="about.html">
+						<img src="images/info.png" height="125" width="125"/>
+					</a>
+					<p>More info...</p>
+				</div>
+				<div class="tile">
+					<a href="http://onlinewindows8.koding.com">
+						<img src="images/website.png" height="125" width="125"/>
+					</a>
+					<p>Official website</p>
+				</div>
+				<div class="tile">
+					<a href="http://onlinewindows8.koding.com/wordpress">
+						<img src="images/blog.png" height="125" width="125"/>
+					</a>
+					<p>Blog</p>
+				</div>
+				<div class="tile">
+					<a href="http://youtube.com/onlinewindows8">
+						<img src="images/youtubechannel.png" height="125" width="125"/>
+					</a>
+					<p>YouTube channel</p>
+				</div>
+			</div>
+			<div class="line">
+				<div class="tile">
+					<a href="http://ntim007.koding.com/">
+						<img src="images/ntim007.gif" height="125" width="125"/>
+					</a>
+					<p>ntim007</p>
+				</div>
+				<div class="tile">
+					<a href="http://link6155.deviantart.com">
+						<img src="images/link6155.gif" height="125" width="125"/>
+					</a>
+				</div>
+				<div class="tile">
+					<iframe src="livetiles/dakoder/index.html" height="125" width="125" scrolling="no" frameborder="0">Your browser doesn't support iframes !</iframe>
+					<p></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="zoomoutbutton" onclick="scale()">-</div>
+	<div id="zoominbutton" onclick="unscale()">+</div>
+	<div id="hoverarea" onmouseover="charms()"></div>
+		<div id="charmsbar" onmouseover="charms()" onmouseout="destroycharms()">
+			<img src="../common/img/charmsbar/search.png" onmouseover="this.src='../common/img/charmsbar/search-hover.png'" onmouseout="this.src='../common/img/charmsbar/search.png'" onclick="searchcharms.style.display='inline';"/><br/>
+			<img src="../common/img/charmsbar/share.png" onclick="sharecharms.style.display='inline';"onmouseover="this.src='../common/img/charmsbar/share-hover.png'" onmouseout="this.src='../common/img/charmsbar/share.png'"/><br/>
+			<img src="../common/img/charmsbar/start.png" onmouseover="this.src='../common/img/charmsbar/start-hover.png'" onmouseout="this.src='../common/img/charmsbar/start.png'"/><br/>
+			<img src="../common/img/charmsbar/devices.png" onmouseover="this.src='../common/img/charmsbar/devices-hover.png'" onmouseout="this.src='../common/img/charmsbar/devices.png'"/><br/>
+			<img src="../common/img/charmsbar/settings.png" onmouseover="this.src='../common/img/charmsbar/settings-hover.png'" onmouseout="this.src='../common/img/charmsbar/settings.png'" onclick="settingscharms.style.display='inline';"/><br/>
+		</div>
+		<div id="datetime">
+			<img src="../common/img/network.png" id="iconnetwork" height="24px" width="24px"/>
+			<img src="../common/img/battery.png" id="iconbattery"/>
+			<span id="time"></span>
+			<script>
+			<!-- Begin
+			function clock() {
+				var digital = new Date();
+				var hours = digital.getHours();
+				var minutes = digital.getMinutes();
+				var seconds = digital.getSeconds();
+				var amOrPm = "AM";
+				if (hours > 11) amOrPm = "PM";
+				if (hours > 12) hours = hours - 12;
+				if (hours == 0) hours = 12;
+				if (minutes <= 9) minutes = "0" + minutes;
+				if (seconds <= 9) seconds = "0" + seconds;
+				dispTime = hours + ":" + minutes ;
+				document.getElementById('time').innerHTML = dispTime;
+				setTimeout("clock()", 1000);
+			}
+			window.onmouseover=clock;
+			//  End -->
+			</script>
+			<div id="date">
+			<script>
+ 			var dayName = new Array ("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
+			var monName = new Array ("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")
+ 			var now = new Date
+			document.write("" + dayName[now.getDay()] + "<br/>" +"<span id=month>" + monName[now.getMonth()] + " "+now.getDate() +"")
+ 			</script>
+		</div>
+	</div>
+	<div id="bottomhoverarea" onmouseover="charms()"></div>
+	<div id="starthoverarea" onmouseover="start()"></div>
+	<div id="startbutton" onmouseout="destroystart()">
+		<img src="../common/img/start.png"/>
+	</div>
+	<div id="settingscharms" class="charms">
+		<a href="#" onclick="settingscharms.style.display='none';" class="closesettings"/></a>
+		<div class="ch1">Settings</div>
+		<div class="ch2d">Start</div>
+		<div class="ch2">Background</div>
+		<img src="images/charmsbar/settings/redflowers.png" onclick="changebg('images/backgrounds/redplants.png')"/>
+		<img src="images/charmsbar/settings/paradoxalred.png" onclick="changebg('images/backgrounds/paradoxalred.png')"/>
+		<img src="images/charmsbar/settings/fishypink.png" onclick="changebg('images/backgrounds/fishypink.png')"/>
+		<img src="images/charmsbar/settings/pinkwaves.png" onclick="changebg('images/backgrounds/pinkwaves.png')"/>
+		<img src="images/charmsbar/settings/orangeswirly.png" onclick="changebg('images/backgrounds/orangeswirly.png')"/>
+		<img src="images/charmsbar/settings/bloom.png" onclick="resetbg('images/backgrounds/bloom.png')"/>
+		<img src="images/charmsbar/settings/yellowparrots.png" onclick="changebg('images/backgrounds/yellowparrots.png')"/>
+		<img src="images/charmsbar/settings/lightgreenclouds.png" onclick="changebg('images/backgrounds/lightgreenclouds.png')"/>
+		<img src="images/charmsbar/settings/lightgreenflowers.png" onclick="changebg('images/backgrounds/lightgreenflowers.png')"/>
+		<img src="images/charmsbar/settings/windowsdpgreen.png" onclick="resetbg('images/backgrounds/windowsdpgreen.png')"/>
+		<img src="images/charmsbar/settings/greenparrots.png" onclick="changebg('images/backgrounds/greenparrots.png')"/>
+		<img src="images/charmsbar/settings/wonderland.png" onclick="changebg('images/backgrounds/wonderland.png')"/>
+		<img src="images/charmsbar/settings/paradise.png" onclick="changebg('images/backgrounds/paradise.png')"/>
+		<img src="images/charmsbar/settings/birds.png" onclick="changebg('images/backgrounds/bird.png')"/>
+		<img src="images/charmsbar/settings/mechanic.png" onclick="changebg('images/backgrounds/mechanic.png')"/>
+		<img src="images/charmsbar/settings/O.png" onclick="changebg('images/backgrounds/O.png')"/>
+		<img src="images/charmsbar/settings/plants2.png" onclick="changebg('images/backgrounds/plants2.png')"/>
+		<img src="images/charmsbar/settings/shapes.png" onclick="changebg('images/backgrounds/shapes.png')"/>
+		<img src="images/charmsbar/settings/swirlyplants.png" onclick="changebg('images/backgrounds/swirlyplants.png')"/>
+		<img src="images/charmsbar/settings/flowers.png" onclick="changebg('images/backgrounds/flowers.png')"/>
+		<img src="images/charmsbar/settings/xboxmusic.png" onclick="resetbg('images/backgrounds/xboxmusic.png')"/>
+		<img src="images/charmsbar/settings/circle.png" onclick="changebg('images/backgrounds/circles.png')"/>
+		<img src="images/charmsbar/settings/thincircle.png" onclick="changebg('images/backgrounds/thincircles.png')"/>
+		<img src="images/charmsbar/settings/grass.png" onclick="changebg('images/backgrounds/grass.png')"/>
+		<img src="images/charmsbar/settings/thickgrass.png" onclick="changebg('images/backgrounds/thickgrass.png')"/>
+		<img src="images/charmsbar/settings/swirlygrass.png" onclick="changebg('images/backgrounds/swirlygrass.png')"/>
+		<img src="images/charmsbar/settings/plain.png" onclick="changebg('images/backgrounds/plain.png')"/>
+		<img src="images/charmsbar/settings/squares.png" onclick="resetbg('images/backgrounds/bg.png')"/>
+		<img src="images/charmsbar/settings/hugeflowers.png" onclick="changebg('images/backgrounds/hugeflowers.png')"/>
+		<img src="images/charmsbar/settings/swirly.png" onclick="changebg('images/backgrounds/swirly.png')"/>
+		<img src="images/charmsbar/settings/squares2.png" onclick="resetbg('images/backgrounds/squares.png')"/>
+		<img src="images/charmsbar/settings/office.png" onclick="resetbg('images/backgrounds/office.png')"/>
+		<img src="images/charmsbar/settings/circleblue.png" onclick="changebg('images/backgrounds/circleblue.png')"/>
+		<img src="images/charmsbar/settings/plants.png" onclick="changebg('images/backgrounds/plants.png')"/>
+		<img src="images/charmsbar/settings/rollinghills.png" onclick="changebg('images/backgrounds/rollinghills.png')"/>
+		<img src="images/charmsbar/settings/default.png" onclick="changebg('images/backgrounds/default.png')"/>
+		<img src="images/charmsbar/settings/clouds.png" onclick="changebg('images/backgrounds/clouds.png')"/>
+		<img src="images/charmsbar/settings/dragons.png" onclick="changebg('images/backgrounds/dragon.png')"/>
+		<img src="images/charmsbar/settings/wavy.png" onclick="changebg('images/backgrounds/wavy.png')"/>
+		<img src="images/charmsbar/settings/greybird.png" onclick="changebg('images/backgrounds/greybird.png')"/>
+		<img src="images/charmsbar/settings/circlerevisited.png" onclick="resetbg('images/backgrounds/circlerevisited.png')"/>
+		<img src="images/backgrounds/plaindarkgrey.png" onclick="changebg('images/backgrounds/plaindarkgrey.png')"/>
+		<span class="ch2">Username</span><br/>
+		First Name :<input type="text" id="firstnameinput" value="Anonymous"/><br/>
+		Last name :<input type="text" id="nameinput" value="User"/><br/>
+
+	</div>
+	<div id="sharecharms" class="charms">
+		<a href="#" onclick="sharecharms.style.display='none';" class="closesettings"/></a>
+		<span class="ch1">Share</span><br/>
+		<span class="sharing">You are sharing : Online Windows 8</span><br/>
+		<span>Send</span><br/>
+		<span>Recommend</span><br/>
+		<div class="g-plusone" data-href="http://onlinewindows8.koding.com"></div>
+		<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://onlinewindows8.koding.com" data-text="Online Windows 8" data-via="ntim007">Tweet</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="http://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	</div>
+	<div id="searchcharms" class="charms">
+	<a href="#" onclick="searchcharms.style.display='none';" class="closesettings"/></a>
+		<div class="ch1">Search</div>
+		<form>
+			<input type="text" id="searchinput" placeholder="Search"/>
+			<input type="reset" id="searchreset"/>
+			<input type="submit"/>
+		</form>
+		<div class="searchcategory">
+			<img src="images/charmsbar/search/apps.png"/>
+			<span>Apps</span>
+		</div>
+		<div class="searchcategory">
+			<img src="images/charmsbar/search/settings.png"/>
+			<span>Settings</span>
+		</div>
+		<div class="searchcategory">
+			<img src="images/charmsbar/search/files.png"/>
+			<span>Files</span>
+		</div>
+		<div class="searchseperator"></div>
+		<div class="searchcategory">
+			<img src="images/charmsbar/search/smartsearch.png"/>
+			<span>SmartSearch</span>
+		</div>
+		<div class="searchcategory">
+			<img src="images/charmsbar/search/grooveshark.png"/>
+			<span>Grooveshark</span>
+		</div>
+		<div class="searchcategory">
+			<img src="images/charmsbar/search/youtube.png"/>
+			<span>YouTube</span>
+		</div>
+	</div>
+<script type='text/javascript' >
+ new CursorPageScroll( 7, 50 );
+</script>
+<script src="https://apis.google.com/js/plusone.js"></script>
+</body>
+</html>
+
+

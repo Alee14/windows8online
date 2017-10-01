@@ -1,0 +1,82 @@
+<!--DO NOT REMOVE THE CODE GIVEN HERE, THAT CODE POWERS THE CHARMS AND START MENU !!! -->
+<html>
+  <head>
+    <!--Title of the app -->
+    <title>Store</title>
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <!--Stylesheet that styles the charms bar and the startbutton -->
+    <link rel="stylesheet" href="css/charms.css"/>
+
+    <!--Script that powers the charms bar-->
+    <script>
+    function visibility(visibility , target) {
+        document.getElementById(target).style.display=visibility;
+    }
+    </script>
+    <script>
+    function doublevisibility(visibility , target , target2) {
+        document.getElementById(target).style.display=visibility;
+        document.getElementById(target2).style.display=visibility;
+    }
+    </script>
+  </head>
+  <body>
+    <!--PLACE YOUR CONTENT HERE -->
+<style type="text/css">
+body {
+	background-image: url(comingsoon.png);
+	background-repeat: no-repeat;
+}
+</style>
+   <div id="splashscreen"></div>
+   <!-- CHARMS BAR CODE -->
+    <div id="charmsbar" onmouseover="doublevisibility('inline','charmsbar','datetime')" onmouseout="doublevisibility('none','charmsbar','datetime')" >
+    <img src="img/charmsbar/search.png" onclick="visibility('block','searchcharms')" onmouseover="this.src='img/charmsbar/search-hover.png'" onmouseout="this.src='img/charmsbar/search.png'"/><br/>
+    <img src="img/charmsbar/share.png" onclick="visibility('block','sharecharms')" onmouseover="this.src='img/charmsbar/share-hover.png'" onmouseout="this.src='img/charmsbar/share.png'"/><br/>
+    <a href="../start/index.html"><img src="img/charmsbar/start.png" onmouseover="this.src='img/charmsbar/start-hover.png'" onmouseout="this.src='img/charmsbar/start.png'"/></a><br/>
+    <img src="img/charmsbar/devices.png" onmouseover="this.src='img/charmsbar/devices-hover.png'" onmouseout="this.src='img/charmsbar/devices.png'"/><br/>
+    <img src="img/charmsbar/settings.png" onclick="visibility('block','settingscharms')" onmouseover="this.src='img/charmsbar/settings-hover.png'" onmouseout="this.src='img/charmsbar/settings.png'"/><br/>
+    </div>
+    <div id="datetime">
+    <img src="img/charmsbar/network.png" id="iconnetwork" height="24px" width="24px"/>
+    <img src="img/charmsbar/battery.png" id="iconbattery"/>
+    <span id="ctime"></span>
+    <script>
+    function clock() {
+        var digital = new Date();
+        var hours = digital.getHours();
+        var minutes = digital.getMinutes();
+        var seconds = digital.getSeconds();
+        var amOrPm = "AM";
+        if (hours > 11) amOrPm = "PM";
+        if (hours > 12) hours = hours - 12;
+        if (hours == 0) hours = 12;
+        if (minutes <= 9) minutes = "0" + minutes;
+        if (seconds <= 9) seconds = "0" + seconds;
+        dispTime = hours + ":" + minutes ;
+        document.getElementById('ctime').innerHTML = dispTime;
+        setTimeout("clock()", 1000);
+    }
+    window.onload=clock;
+    </script>
+    <div id="date">
+      <script>
+
+ var dayName = new Array ("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
+
+ var monName = new Array ("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")
+
+ var now = new Date
+
+ document.write("" + dayName[now.getDay()] + "<br/>" +"<span id=month>" + monName[now.getMonth()] + " "+now.getDate() +"")
+      </script>
+    </div>
+    </div>
+    <div id="startbutton" onmouseout="visibility('none','startbutton')">
+    <a href="../start/index.html"><img src="img/charmsbar/startbutton.png"/></a>
+    </div>
+    <div id="hoverarea" onmouseover="doublevisibility('inline','charmsbar','datetime')" class="hotcorner"></div>
+    <div id="bottomhoverarea" onmouseover="doublevisibility('inline','charmsbar','datetime')" class="hotcorner"></div>
+    <div id="starthoverarea" onmouseover="visibility('inline','startbutton')" class="hotcorner"></div>
+  </body>
+</html>

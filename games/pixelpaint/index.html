@@ -1,0 +1,99 @@
+<!DOCTYPE>
+<html>
+<head>
+<title>Pixel Paint</title>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<link rel="stylesheet" href="style.css">
+<script src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.2.min.js"></script>
+<script src="code.js"></script>
+<!--[if IE 9]><style>#palette ul { height: 255px; }</style><![endif]-->
+    <!--Stylesheet that styles the charms bar and the startbutton -->
+    <link rel="stylesheet" href="css/charms.css"/>
+
+    <!--Script that powers the charms bar-->
+    <script>
+function charms(){
+	document.getElementById('charmsbar').style.display='block';
+	document.getElementById('datetime').style.display='block';
+}
+function destroycharms() {
+	document.getElementById('charmsbar').style.display='none';
+	document.getElementById('datetime').style.display='none';
+}
+function start(){
+	document.getElementById('startbutton').style.display='block';
+}
+function destroystart() {
+	document.getElementById('startbutton').style.display='none';
+}
+    </script>
+</head>
+<body>
+<div id="splashscreen"></div>
+<div id=container>
+<div id=canvas>
+<canvas id=grid width=512 height=512></canvas>
+<div id=pixels></div>
+</div>
+<div id=toolbar>
+<div id=toolbar_top><ul><li id=clear style="background-image: url(clear.png)"><span>Clear Canvas</span></li><li><canvas id=preview width=32 height=32 title=Preview></canvas></li><li id=view_png style="background-image: url(view.png)"><span>View PNG</span></li></ul></div>
+<div id=tools><ul><li style="background-image: url(eraser.png)"><span>Eraser</span></li><li style="background-image: url(picker.png)"><span>Color Picker</span></li><li class=selected style="background-image: url(pencil.png)"><span>Pen</span></li><li style="background-image: url(fill.png)"><span>Fill</span></li></ul></div>
+<div id=palette><ul><li>Black</li><li>White</li><li>Red</li><li>Green</li><li>Blue</li><li>Yellow</li><li>Grey</li><li>Purple</li></ul></div>
+</div>
+</div>
+</div>
+    <div id="hoverarea" onmouseover="charms()" class="hotcorner">
+</div>
+<div id="charmsbar" onmouseover="charms()" onmouseout="destroycharms()">
+<img src="../../common/img/charmsbar/search.png" onmouseover="this.src='../../common/img/charmsbar/search-hover.png'" onmouseout="this.src='../../common/img/charmsbar/search.png'"/><br/>
+<img src="../../common/img/charmsbar/share.png" onmouseover="this.src='../../common/img/charmsbar/share-hover.png'" onmouseout="this.src='../../common/img/charmsbar/share.png'"/><br/>
+<a href="../../start/index.html"><img src="../../common/img/charmsbar/start.png" onmouseover="this.src='../../common/img/charmsbar/start-hover.png'" onmouseout="this.src='../../common/img/charmsbar/start.png'"/></a><br/>
+<img src="../../common/img/charmsbar/devices.png" onmouseover="this.src='../../common/img/charmsbar/devices-hover.png'" onmouseout="this.src='../../common/img/charmsbar/devices.png'"/><br/>
+<img src="../../common/img/charmsbar/settings.png" onmouseover="this.src='../../common/img/charmsbar/settings-hover.png'" onmouseout="this.src='../../common/img/charmsbar/settings.png'" onclick="settingsc()"/><br/>
+</div>
+<div id="datetime">
+<img src="../../common/img/network.png" id="iconnetwork" height="24px" width="24px"/>
+<img src="../../common/img/battery.png" id="iconbattery"/>
+<span id="time"></span>
+<script language="javascript" type="text/javascript">
+<!-- Begin
+function clock() {
+var digital = new Date();
+var hours = digital.getHours();
+var minutes = digital.getMinutes();
+var seconds = digital.getSeconds();
+var amOrPm = "AM";
+if (hours > 11) amOrPm = "PM";
+if (hours > 12) hours = hours - 12;
+if (hours == 0) hours = 12;
+if (minutes <= 9) minutes = "0" + minutes;
+if (seconds <= 9) seconds = "0" + seconds;
+dispTime = hours + ":" + minutes ;
+document.getElementById('time').innerHTML = dispTime;
+setTimeout("clock()", 1000);
+}
+window.onload=clock;
+//  End -->
+</script>
+<div id="date"><script language="Javascript">
+
+ var dayName = new Array ("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
+
+ var monName = new Array ("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")
+
+ var now = new Date
+
+ document.write("" + dayName[now.getDay()] + "<br/>" +"<span id=month>" + monName[now.getMonth()] + " "+now.getDate() +"")
+ </script>
+</div>
+</div>
+<div id="bottomhoverarea" onmouseover="charms()" class="hotcorner">
+</div>
+<div id="starthoverarea" onmouseover="start()" class="hotcorner">
+</div>
+<div id="startbutton" onmouseout="destroystart()">
+<a href="../../start/index.html"><img src="../../common/img/start.png"/></a>
+</div>
+</body>
+</html>

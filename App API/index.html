@@ -1,0 +1,104 @@
+<!--DO NOT REMOVE THE CODE GIVEN HERE, THAT CODE POWERS THE CHARMS AND START MENU !!! -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!--Title of the app -->
+    <title></title>
+
+    <!--Stylesheet that styles the charms bar and the startbutton -->
+    <link rel="stylesheet" href="css/appbase.css"/>
+
+    <!--Script that powers the charms bar-->
+    <script>
+    function visibility(visibility , target) {
+        document.getElementById(target).style.display=visibility;
+    }
+    </script>
+    <script>
+    function doublevisibility(visibility , target , target2) {
+        document.getElementById(target).style.display=visibility;
+        document.getElementById(target2).style.display=visibility;
+    }
+    </script>
+  </head>
+  <body oncontextmenu="visibility('block','appbar')" onclick="visibility('none','appbar')">
+	<div id="splashscreen"></div>
+    <!--PLACE YOUR CONTENT HERE -->
+<p>Things to do :
+<br/>- Customize the settings charms
+<br/>- Customize the share charms
+<br/>- Customize splashscreen
+<br/>- Customize appbar
+<br/>- Add some content to the app
+<br/>- Read README.txt
+<br/>- Fill in the about.txt
+<br/>- Make a tile for your app (250x250)
+</p>
+    <!-- App bar -->
+        <div id="appbar"></div>
+    <!-- Settings charms -->
+    <div id="settingscharms" class="charms">       <a href="#" onclick="settingscharms.style.display='none';" class="closecharms"/></a>
+        <span class="ch1">Settings</span><br/>
+    </div>
+    <!-- Share charms -->
+    <div id="sharecharms" class="charms">       <a href="#" onclick="sharecharms.style.display='none';" class="closecharms"/></a>
+        <span class="ch1">Share</span><br/>
+        <span class="sharing">You are sharing : Online Windows 8</span><br/>
+        <span>Send</span><br/>
+        <span>Recommend</span><br/>
+        <div class="g-plusone" data-href="http://onlinewindows8.koding.com"></div>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://onlinewindows8.koding.com" data-text="Online Windows 8" data-via="ntim007">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="http://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </div>
+    <!-- CHARMS BAR CODE -->
+    <div id="charmsbar" onmouseover="doublevisibility('inline','charmsbar','datetime')" onmouseout="doublevisibility('none','charmsbar','datetime')" >
+    <img src="img/charmsbar/search.png" onclick="visibility('block','searchcharms')" onmouseover="this.src='img/charmsbar/search-hover.png'" onmouseout="this.src='img/charmsbar/search.png'"/><br/>
+    <img src="img/charmsbar/share.png" onclick="visibility('block','sharecharms')" onmouseover="this.src='img/charmsbar/share-hover.png'" onmouseout="this.src='img/charmsbar/share.png'"/><br/>
+    <a href="../start/index.html"><img src="img/charmsbar/start.png" onmouseover="this.src='img/charmsbar/start-hover.png'" onmouseout="this.src='img/charmsbar/start.png'"/></a><br/>
+    <img src="img/charmsbar/devices.png" onmouseover="this.src='img/charmsbar/devices-hover.png'" onmouseout="this.src='img/charmsbar/devices.png'"/><br/>
+    <img src="img/charmsbar/settings.png" onclick="visibility('block','settingscharms')" onmouseover="this.src='img/charmsbar/settings-hover.png'" onmouseout="this.src='img/charmsbar/settings.png'"/><br/>
+    </div>
+    <div id="datetime">
+    <img src="img/charmsbar/network.png" id="iconnetwork" height="24px" width="24px"/>
+    <img src="img/charmsbar/battery.png" id="iconbattery"/>
+    <span id="ctime"></span>
+    <script>
+    function clock() {
+        var digital = new Date();
+        var hours = digital.getHours();
+        var minutes = digital.getMinutes();
+        var seconds = digital.getSeconds();
+        var amOrPm = "AM";
+        if (hours > 11) amOrPm = "PM";
+        if (hours > 12) hours = hours - 12;
+        if (hours == 0) hours = 12;
+        if (minutes <= 9) minutes = "0" + minutes;
+        if (seconds <= 9) seconds = "0" + seconds;
+        dispTime = hours + ":" + minutes ;
+        document.getElementById('ctime').innerHTML = dispTime;
+        setTimeout("clock()", 1000);
+    }
+    window.onload=clock;
+    </script>
+    <div id="date">
+      <script>
+
+ var dayName = new Array ("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
+
+ var monName = new Array ("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")
+
+ var now = new Date
+
+ document.write("" + dayName[now.getDay()] + "<br/>" +"<span id=month>" + monName[now.getMonth()] + " "+now.getDate() +"")
+      </script>
+    </div>
+    </div>
+    <div id="startbutton" onmouseout="visibility('none','startbutton')">
+    <a href="../start/index.html"><img src="img/charmsbar/startbutton.png"/></a>
+    </div>
+    <div id="hoverarea" onmouseover="doublevisibility('inline','charmsbar','datetime')" class="hotcorner"></div>
+    <div id="bottomhoverarea" onmouseover="doublevisibility('inline','charmsbar','datetime')" class="hotcorner"></div>
+    <div id="starthoverarea" onmouseover="visibility('inline','startbutton')" class="hotcorner"></div>
+  </body>
+</html>

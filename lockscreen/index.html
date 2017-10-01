@@ -1,0 +1,107 @@
+<html>
+<head>
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<title>Windows</title>
+<link rel="shortcut icon" href="../favicon.ico"/>
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js'></script>
+	
+<style>
+html,body{
+    overflow:hidden;
+    height:100%;
+    margin:0px;
+    width:100%;
+    background:url('bg.png');
+
+
+}
+img, a {
+	outline:none;
+	border:none;
+}
+div.window{
+    background:url('bg.jpg');
+    background-size:cover;
+    width:100%;
+    height:100%;
+    position:absolute;
+    font-family: Segoe UI Semilight;
+    color:#FFFFFF;
+}
+div.windowcontent {
+    position:absolute;
+    bottom: 2cm;
+    margin-left:2cm;
+}
+#date {
+font-size: 1.5cm;
+}
+#pendule {
+font-size:113px;
+}
+#notification {
+font-family: Segoe UI;
+
+line-height:10px;
+}
+#notification * {
+vertical-align:middle;
+}
+</style>
+<script type='text/javascript'> 
+$(window).load(function(){
+// lockscreen animation
+var sh = $(window).height();
+$("div.window").draggable({ axis: 'y',containment: [0, -500, 1, 1],drag: function(event, ui) { }, stop: function(event, ui) { if (ui.position.top < 0 - sh/2) { $(this).animate({ top: -3000 },5000); $(this).fadeOut('fast'); window.location.assign('../login/index.html'); }; if (ui.position.top > 0 - sh/2 + 1) { $(this).animate({ top: 0 }); }} })
+
+});
+</script>
+</head>
+<body>
+<div class="window">
+<div class="windowcontent">
+<span id="pendule"></span>
+<script language="javascript" type="text/javascript">
+<!-- Begin
+function clock() {
+var digital = new Date();
+var hours = digital.getHours();
+var minutes = digital.getMinutes();
+var seconds = digital.getSeconds();
+var amOrPm = "AM";
+if (hours > 11) amOrPm = "PM";
+if (hours > 12) hours = hours - 12;
+if (hours == 0) hours = 12;
+if (minutes <= 9) minutes = "0" + minutes;
+if (seconds <= 9) seconds = "0" + seconds;
+dispTime = hours + ":" + minutes ;
+document.getElementById('pendule').innerHTML = dispTime;
+setTimeout("clock()", 1000);
+}
+window.onload=clock;
+//  End -->
+</script>
+<div id="date"><script language="Javascript">
+
+ var dayName = new Array ("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
+
+ var monName = new Array ("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")
+
+ var now = new Date
+
+ document.write("" + dayName[now.getDay()] + ", " + "<span id=month>" + monName[now.getMonth()] + " "+now.getDate() +"")
+ </script>
+</div>
+<p id="notification">
+<img src="clear.png"/>
+<img src="mail.png"/> 2 
+<img src="clear.png"/>
+<img src="calendar.png"/> 1
+<img src="clear.png"/>
+<img src="messaging.png"/> 75
+</p>
+</div>
+</div>
+</body>
+</html>

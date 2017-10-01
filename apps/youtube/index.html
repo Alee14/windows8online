@@ -1,0 +1,131 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+    <title>YouTube</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!--Title of the app -->
+    <title></title>
+
+    <!--Stylesheet that styles the charms bar and the startbutton -->
+    <link rel="stylesheet" href="css/appbase.css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+
+    <!--Script that powers the charms bar-->
+    <script>
+    function visibility(visibility , target) {
+        document.getElementById(target).style.display=visibility;
+    }
+    </script>
+    <script>
+    function doublevisibility(visibility , target , target2) {
+        document.getElementById(target).style.display=visibility;
+        document.getElementById(target2).style.display=visibility;
+    }
+    </script>
+	<link rel="stylesheet" href="css/style.css"/>
+	<link rel="stylesheet" href="css/appbase.css"/>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> 
+    <script src="js/youtubeapi.js"></script> 
+
+    <script>
+    $(document).ready(function() {
+        $(".search_input").keyup(function() {
+            $("#hugelogo").fadeOut();
+            $("#viewer").fadeOut();
+            $("#close").fadeOut();
+            $("#tipbox").fadeOut();
+            $("#logo").fadeIn();
+            $("#video").fadeIn();
+            $("viewer").src='';
+        });
+        $("#close").click(function() {
+            $("#close").fadeOut();
+            $("#viewer").fadeOut();
+            $("#video").fadeIn();
+            $("viewer").src='';
+        });
+    }); 
+    </script>
+    <script>
+    function showframe() {
+    	document.getElementById('viewer').style.display='block';
+    	document.getElementById('close').style.display='block';
+    	document.getElementById('video').style.display='none';
+    }
+    </script>
+</head> 
+<body> 
+<div id="splashscreen"></div>
+<div align="center"> 
+
+    <div id="input_box">
+        <img src="img/hugelogo.png" width="400px" height="161.5px" id="hugelogo"/>
+        <img src="img/smalllogo.png" id="logo"/>
+        <input type="text" class='search_input' placeholder="Search"/>
+        <img src="img/close.png" id="close"/>
+    </div>
+    <div id="tipbox">
+        Welcome to the YouTube App! To start a search, type in the search box. The results should automatically appear. To view a video, click on the video title. To close the video, click on the close button located on the top-right corner. Enjoy!
+    </div>
+
+    <iframe src="" id="viewer" name="viewer" height="90%" width="100%" frameborder="0">Your browser doesn't support iframes.</iframe>
+    <div id="video"> 
+ 
+    </div> 
+
+</div>
+    <!-- CHARMS BAR CODE -->
+<div id="charmsbar" onmouseover="doublevisibility('inline','charmsbar','datetime')" onmouseout="doublevisibility('none','charmsbar','datetime')" >
+    <img src="../../common/img/charmsbar/search.png" onclick="visibility('block','searchcharms')" onmouseover="this.src='../../common/img/charmsbar/search-hover.png'" onmouseout="this.src='../../common/img/charmsbar/search.png'"/><br/>
+    <img src="../../common/img/charmsbar/share.png" onclick="visibility('block','sharecharms')" onmouseover="this.src='../../common/img/charmsbar/share-hover.png'" onmouseout="this.src='../../common/img/charmsbar/share.png'"/><br/>
+    <a href="../../start/index.html"><img src="../../common/img/charmsbar/start.png" onmouseover="this.src='../../common/img/charmsbar/start-hover.png'" onmouseout="this.src='../../common/img/charmsbar/start.png'"/></a><br/>
+    <img src="../../common/img/charmsbar/devices.png" onmouseover="this.src='../../common/img/charmsbar/devices-hover.png'" onmouseout="this.src='../../common/img/charmsbar/devices.png'"/><br/>
+    <img src="../../common/img/charmsbar/settings.png" onclick="visibility('block','settingscharms')" onmouseover="this.src='../../common/img/charmsbar/settings-hover.png'" onmouseout="this.src='../../common/img/charmsbar/settings.png'"/><br/>
+    </div>
+    <div id="datetime">
+    <img src="../../common/img/charmsbar/network.png" id="iconnetwork" height="24px" width="24px"/>
+    <img src="../../common/img/charmsbar/battery.png" id="iconbattery"/>
+    <span id="ctime"></span>
+    <script>
+    function clock() {
+        var digital = new Date();
+        var hours = digital.getHours();
+        var minutes = digital.getMinutes();
+        var seconds = digital.getSeconds();
+        var amOrPm = "AM";
+        if (hours > 11) amOrPm = "PM";
+        if (hours > 12) hours = hours - 12;
+        if (hours == 0) hours = 12;
+        if (minutes <= 9) minutes = "0" + minutes;
+        if (seconds <= 9) seconds = "0" + seconds;
+        dispTime = hours + ":" + minutes ;
+        document.getElementById('ctime').innerHTML = dispTime;
+        setTimeout("clock()", 1000);
+    }
+    window.onload=clock;
+    </script>
+    <div id="date">
+      <script>
+
+ var dayName = new Array ("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
+
+ var monName = new Array ("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")
+
+ var now = new Date
+
+ document.write("" + dayName[now.getDay()] + "<br/>" +"<span id=month>" + monName[now.getMonth()] + " "+now.getDate() +"")
+      </script>
+    </div>
+    </div>
+    <div id="startbutton" onmouseout="visibility('none','startbutton')">
+    <a href="../../start/index.html"><img src="../../common/img/charmsbar/startbutton.png"/></a>
+    </div>
+    <div id="hoverarea" onmouseover="doublevisibility('inline','charmsbar','datetime')" class="hotcorner"></div>
+    <div id="bottomhoverarea" onmouseover="doublevisibility('inline','charmsbar','datetime')" class="hotcorner"></div>
+    <div id="starthoverarea" onmouseover="visibility('inline','startbutton')" class="hotcorner"></div>
+ 
+</body> 
+</html> 
+ 
