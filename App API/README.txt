@@ -3,7 +3,7 @@ Online Windows 8 App API by ntim007
 How to ?
 ********
 - Make your app using the API
-- Send a note to ntim007 or/and to link6155 on deviantART
+- Send a pull request on the github repo
 
 Things you should do before submitting your app :
 *************************************************
